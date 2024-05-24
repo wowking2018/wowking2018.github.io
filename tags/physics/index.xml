@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Physics on Love and Share</title>
+    <link>https://wowking2018.github.io/tags/physics/</link>
+    <description>Recent content in Physics on Love and Share</description>
+    <generator>Hugo -- 0.126.1</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 30 Jul 2023 19:16:56 +0800</lastBuildDate>
+    <atom:link href="https://wowking2018.github.io/tags/physics/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The Big Bang Theory-Physics Bowl Analysis</title>
+      <link>https://wowking2018.github.io/posts/2023-07-30-the-big-bang-theory-physics-bowl-analysis/</link>
+      <pubDate>Sun, 30 Jul 2023 19:16:56 +0800</pubDate>
+      <guid>https://wowking2018.github.io/posts/2023-07-30-the-big-bang-theory-physics-bowl-analysis/</guid>
+      <description>Introduction Physics Bowl 高中物理竞赛由美国物理教师协会 AAPT 主办，试题由协会注册的大学物理教授和教学经验丰富的高中物理老师组成理事会进行出题和评审. 物理碗的发明者</description>
+      <content:encoded><![CDATA[<h3 id="introduction">Introduction</h3>
+<p>Physics Bowl 高中物理竞赛由美国物理教师协会 AAPT 主办，试题由协会注册的大学物理教授和教学经验丰富的高中物理老师组成理事会进行出题和评审.</p>
+<p>物理碗的发明者是蒂姆·英格兹比 (Tim Ingoldsby) 和比尔·阿诺德 (Bill Arnold)，他们在1980年提出了一项物理竞赛的提案和指导方针，后来发展成为现在的物理碗.</p>
+<h3 id="how-to-solve-the-equation">How to solve the equation?</h3>
+<p>那么现在我们来看生活大爆炸中的这一幕，第一季第13集，Sheldon和Leonard，Rajesh，Howard 还有 Leslie 分为了两队进行对抗.</p>
+<img src="../pic/2023-07-30-The Big Bang Theory-Physics Bowl Analysis/fig1.png" style="zoom: 100%; display: block; margin: 0 auto;" width="500px" alt = "show me something"/>
+<p>其中带箭头的直线为电子，波浪线为光子，这个图表示的是电子 ($e^{-}$) 和负缪子 ($\mu$) 之间的弹性散射过程. 这个过程是通过交换一个虚光子 ($\gamma$) 实现的，所以图中有一条波浪线. 式子中的各个符号表示了初末态的动量 $p$ 和自旋 $s$，以及光子的动量 $q$. 这个式子计算的是散射矩阵（S-matrix）的矩阵元，表示散射过程的概率幅<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>.</p>
+<p>这是QED的基本费曼图之一，其中Leonard，Rajesh，Howard的反应看上去并不知道这个题目这是极为不合理的，而且以剧中Sheldon的能力肯定能够解决这个问题. 不管怎样，看门人 (janitor) 回答说正确的答案是 $-8 \pi \alpha$. 以我个人所收集到的资料，至少在没有附加条件的情况下是无法得到这个答案的<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>，题目中给出的积分是</p>
+<p>$$
+\begin{equation}
+\begin{aligned}
+(2\pi)^4\int[\overline{\upsilon}^{(s_3)}(p_3)(i\sqrt{4\pi\alpha}\gamma^{\mu})\upsilon^{(s_1)}(p_1)]\frac{ig_{\mu\nu}}{q^{2}}[\overline{\upsilon}^{(s_4)}(p_4)(i\sqrt{4\pi\alpha}\gamma^{\mu})\upsilon^{(s_2)}(p_2)] \\
+x\delta^{(4)}(p_1-p_3-q)\delta^{(4)}(p_2+q-p_4)\mathrm{d}^4q
+\end{aligned}
+\end{equation}
+$$</p>
+<p>后续的过程中我会保持与题目中一致的记号进行推导. 首先，这并不是一个方程，台词中所说的 “Solve the equation” 显然是不对的，但为了保持统一我们暂时默认用积分式来代指这个式子. 同时对这个式子作相应的修改，去掉了 $x$，同时如果是负缪子应该用 $u$ 来表示</p>
+<p>$$
+\begin{equation}
+\begin{aligned}
+(2\pi)^4\int[\overline{\upsilon}^{(s_3)}(p_3)(i\sqrt{4\pi\alpha}\gamma^{\mu})\upsilon^{(s_1)}(p_1)]\frac{ig_{\mu\nu}}{q^{2}}[\overline{u}^{(s_4)}(p_4)(i\sqrt{4\pi\alpha}\gamma^{\nu})u^{(s_2)}(p_2)]  \\
+\delta^{(4)}(p_1-p_3-q)\delta^{(4)}(p_2+q-p_4)\mathrm{d}^4q
+\end{aligned} \label{eq2}
+\end{equation}
+$$</p>
+<p>根据狄拉克函数的计算规则有 $q = p_1- p_3 = p_4- p_2$时，对于 Eq. \eqref{eq2} 中其余项进行合并可以得到</p>
+<p>$$
+\int \delta^{(4)}(p_1-p_3-q)\delta^{(4)}(p_2+q-p_4)\mathrm{d}^4q = 1.
+$$</p>
+<p>积分式可以转化为</p>
+<p>$$
+\begin{equation}
+i{\cal M}=\frac{-i4\pi\alpha}{q^{2}}g_{\mu\nu}\left[\bar{\upsilon}^{(s_3)}\left(p_{3}\right)\gamma^{\mu}\upsilon^{(s_1)}\left(p_{1}\right)\right]\cdot[\bar{u}^{(s_4)}\left(p_{4}\right)\gamma^{\nu}u^{(s_2)}\left(p_{2}\right)]. \label{eq3}
+\end{equation}
+$$</p>
+<p>根据动量守恒可以得到 $(p_1 - p_3)^2 = 2p^2 (1-\cos \theta)$，$\theta$ 是散射粒子的夹角，对于中括号内的项可以表示为</p>
+<p>$$
+\begin{equation}
+\bar{\upsilon}(p^{\prime})\gamma^{\mu}\upsilon(p)=\left(m_e-E_e-\frac{p^2\cos\theta}{m_e+E_e},p\sin\theta,ip\sin\theta,p(1-\cos\theta)\right)<br>
+\end{equation}
+$$</p>
+<p>其中， $m_{e}$ 是电子质量，$E_{e}$ 是对应能量，$p, p^{\prime}$ 是散射进入和散射弹出的动量. 如果假设粒子是 ultra-relativistic，即 $E_{e}\approx E_{\mu}\gg m_{\mu}$，上式可以表示为(两项同理)</p>
+<p>$$
+\begin{equation}
+\bar{\upsilon}(p^{\prime})\gamma^{\mu}\upsilon(p)\rightarrow p(1-\cos\theta,\sin\theta,i\sin\theta,1-\cos\theta)
+\end{equation}
+$$</p>
+<p>故可得到 Eq. \eqref{eq3} 中的项为</p>
+<p>$$
+\begin{equation}
+g_{\mu\nu}\left[\bar{v}^{(s_{3})}\left(p_{3}\right)\gamma^{\mu}v^{(s_{1})}\left(p_{1}\right)\right]\cdot\left[\bar{u}^{(s_{4})}\left(p_{4}\right)\gamma^{\nu}u^{(s_{2})}\left(p_{2}\right)\right] \approx 2 p^2 (1-\cos \theta)^2
+\end{equation}
+$$</p>
+<p>其结果并不影响我们计算散射矩阵元，将 Eq. (6) 代入散射矩阵元，可以得到</p>
+<p>$$
+\begin{equation}
+\mathcal{M} = - 4 \pi \alpha (1-\cos \theta).
+\end{equation}
+$$</p>
+<p>所以如果图中问题是计算完全散射矩阵元，即 $\theta = \pi$，那么结果就是管理员所说的</p>
+<p>$$
+\begin{equation}
+\mathcal{M} = -8\pi \alpha.
+\end{equation}
+$$</p>
+<p>这个题目其实并不是很难，只要掌握了量子场论中的费曼规则，就可以根据图形把式子写出来. 但是在剧中，谢尔顿和他的队友们都没有回答出来，而是被一个门卫大叔轻松地说出了正确答案. 这不过是剧组的安排罢了，说多了都是剧情需要！</p>
+<h3 id="reference">Reference</h3>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p><a href="https://www.zhihu.com/question/22568808">生活大爆炸第一季13集物理碗最后一题到底有多难？</a>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2">
+<p><a href="https://www.scribd.com/doc/58206115/Tbbt-Physics-Bowl-Analysis">TBBT Physics Bowl [ANALYSIS OF THE LAST QUESTION]</a>&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>KdV 方程求解及其背景</title>
+      <link>https://wowking2018.github.io/posts/2023-07-09-the-kdv-equation/</link>
+      <pubDate>Sun, 09 Jul 2023 19:16:56 +0800</pubDate>
+      <guid>https://wowking2018.github.io/posts/2023-07-09-the-kdv-equation/</guid>
+      <description>背景介绍 孤子的发现应追溯到1834年的夏日，英国科学家 J.S.Russel 骑马正沿着一条运河岸道旅行，偶然发现在狭窄的河床中行走的船突然停止前进，被船体带动的</description>
+      <content:encoded><![CDATA[<h3 id="背景介绍">背景介绍</h3>
+<p>孤子的发现应追溯到1834年的夏日，英国科学家 <em>J.S.Russel</em> 骑马正沿着一条运河岸道旅行，偶然发现在狭窄的河床中行走的船突然停止前进，被船体带动的水团积聚在船头周围并剧烈地翻动着. 不久，一个圆形且轮廓分明的巨大孤立波峰开始形成，并急速离开船头向前运动. 波长约 10 米，高约 0.5 米，在行进中波的形状和速度并无明显变化，以后高度逐渐下降，在跟踪至三公里后，终于消失在蜿蜒的河道上. 这次发现的奇特景观促使 <em>Russel</em> 开始广泛的水波实验研究. 他称这沿着狭窄通道传播的、保持形状和速度不变的水包为“伟大的孤立波”，并意识到这是流体力学中某方程的稳定解. 然而, 由于当时数学水平与计算技术的限制，罗素的研究没有取得满意的进展，直到1895年，荷兰著名数学家 <em>Korteweg</em> 和他的学生 <em>de Vries</em> 在对孤波进行全面分析后指出这种波可近似为小振幅的长波，并以此建立了浅水波运动方程<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>：</p>
+<p>$$
+\begin{equation}
+\frac{\partial \eta}{\partial \tau}=\sqrt{\frac{g}{h}} \frac{\partial}{\partial \xi}\left(\frac{3}{4} \eta^2+\alpha \eta+\frac{\sigma}{2} \frac{\partial^2 \eta}{\partial \xi^2}\right), \label{eq_1}
+\end{equation}
+$$</p>
+<p>其中, $\sigma=\frac{1}{3} h^3-\frac{T h}{\rho g}, \eta$ 为波面高度, $h$ 为水深, $g$ 为重力加速度, $\rho$ 是水的密度, $\alpha$ 是与水的匀速流动有关的小常数, $T$ 是水的表面张力. 此后 Korteweg 和 de Vries 利用行波法求出与 Russel 描述一致的孤波解, 争论才告终止.</p>
+<p>如果作以下变换</p>
+<p>$$
+\begin{equation}
+t = \frac{1}{2} \sqrt{\frac{g}{h \sigma}}\tau, \quad x = -\frac{\xi}{\sqrt{\sigma}}, \quad u=\frac{1}{2}\eta +\frac{1}{3}\alpha
+\end{equation}
+$$</p>
+<p>则 Eq. $\eqref{eq_1}$ 可写成标准的形式</p>
+<p>$$
+\begin{equation}
+u_t+u_{x x x}+6 u u_x=0 \label{eq_3}
+\end{equation}
+$$</p>
+<p>后人为了纪念这两位伟大的学者对孤波作出的贡献将 Eq. $\eqref{eq_1}$ 或 Eq. $\eqref{eq_3}$ 称为 <em>KdV</em> 方程.</p>
+<h3 id="kdv-方程的推导">KdV 方程的推导</h3>
+<p>1968年，Lax 曾提出了一种用线性算子导出孤子方程的方法 <sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>, 具体计算方法如下. 首先线性算子 $\mathcal{L}$ 满足</p>
+<p>$$
+\begin{equation}
+\mathcal{L} \phi=\lambda \phi . \label{eq_4}
+\end{equation}
+$$</p>
+<p>其中 $\lambda$ 为谱参数, 如果只考虑等谱情况 ( $\lambda$ 与时间无关), 即 $\lambda_t=0$，其次 $\phi$ 还满足</p>
+<p>$$
+\begin{equation}
+\phi_t=\mathcal{A} \phi, \label{eq_5}
+\end{equation}
+$$</p>
+<p>其中 $\mathcal{A}$ 也是线性算子. 将 Eq. $\eqref{eq_4}$ 对 $t$ 求导, 同时结合 Eq. $\eqref{eq_5}$ 有:</p>
+<p>$$
+\begin{equation}
+\mathcal{L}_t \phi+\mathcal{L}\mathcal{A} \phi=\mathcal{A}\mathcal{L} \phi
+\end{equation}
+$$</p>
+<p>从而有</p>
+<p>$$
+\begin{equation}
+\mathcal{L}_t=\mathcal{A}\mathcal{L} - \mathcal{L}\mathcal{A} = [\mathcal{A}, \mathcal{L}] .
+\end{equation}
+$$</p>
+<p>这便是著名的 Lax 方程, 其中 $\mathcal{L}, \mathcal{A}$ 称为 Lax 对. 这里给出一种由 Lax 对进行推导得出 KdV 方程的较为简单的方式， 取 $\mathcal{L}$ 为 Hamilton 算子 $\mathcal{L}=\partial^2 _{x} - u(x, t)$ (实际上Lax对确实和薛定谔方程是有联系的)， $\mathcal{A}$ 为反对称算子 $\mathcal{A}=\alpha \partial_x^3 + B(x,t) \partial_x+ C(x,t) $ ， 其中 $\alpha$ 是常数， $B(x, t), C(x, t)$ 是待定的项, 则</p>
+<div>
+$$
+\begin{equation}
+    \begin{aligned}
+        \mathcal{A}\mathcal{L} & =\left(\alpha \partial_x^3 + B(x,t) \partial_x+ C(x,t) \right)\left(\partial^2 _x - u\right) \\
+        & = \alpha \partial_x^5 - \alpha(u_{xxx}+3u_{xx}\partial_{x} + 3u_{x}\partial_{x}^2 + u\partial_{x}^3) \\
+        & + B(\partial_{x}^3-u_{x}-u\partial_{x}) + C(\partial_{x}^2-u)\\
+        \mathcal{L}\mathcal{A} & =\left(\partial^2 _x - u\right)\left(\alpha \partial_x^3 + B(x,t) \partial_x+ C(x,t) \right) \\
+        & =  \alpha \partial_x^5 +(B_{xx}\partial_{x} + 2B_{x}\partial_{x}^2 + B \partial_{x}^3) + (C_{xx}+2C_{x}\partial_{x} + C\partial_{x}^2) \\
+        & - u\left(\alpha \partial_x^3 + B \partial_x+ C \right)
+    \end{aligned}
+\end{equation}
+$$
+</div>
+<p>由这两个算子便有</p>
+<div>
+$$
+\begin{equation}
+    \begin{aligned}
+        u _{t} & =\mathcal{A}\mathcal{L} -\mathcal{L}\mathcal{A} \\
+        & = -(3 \alpha u_{x}+2B_{x})\partial_{x}^2 -(3\alpha u_{xx} + B_{xx}+2C_{x})\partial_{x} +\alpha u_{xxx} - Bu_{x} -C_{xx}.
+    \end{aligned}
+\end{equation}
+$$
+</div>
+<p>其中等式右边有关 $\partial_{x}$ 的项都为 $0$，可得</p>
+<p>$$
+\begin{equation}
+\begin{aligned}
+&amp;3 \alpha u_{x}+2B_{x} = 0 \
+&amp;3\alpha u_{xx}+B_{xx}+2C_{x} = 0
+\end{aligned}
+\end{equation}
+$$</p>
+<p>$$
+f(x) = f(a) + f’(a)(x-a) + \frac{f’’(a)}{2!}(x-a)^2 + \cdots + \frac{f^{(n)}(a)}{n!}(x-a)^n + R_n(x)
+$$</p>
+<p>进行积分后可以得到</p>
+<p>$$
+\begin{equation}
+\begin{aligned}
+&amp;B = -\frac{3}{2} \alpha u \
+&amp;C = -\frac{3}{2} \alpha u_{x}+\frac{1}{2} B_{x} = -\frac{3}{4}\alpha u_{x}
+\end{aligned}
+\end{equation}
+$$</p>
+<p>可以得到 $u_{t} = \alpha u_{xxx} - Bu_{x} -C_{xx}= \frac{1}{4}\alpha u_{xxx}+\frac{3}{2}\alpha u u_{x}$， 取 $\alpha=-4$, 即为 $u_t+u_{x x x}+6 u u_x=0$.</p>
+<h3 id="kdv方程求解">KdV方程求解</h3>
+<h4 id="双曲正切法">双曲正切法</h4>
+<p>首先, 运用行波法将所求解的非线性偏微分方程转化为非线性常微分方程, 即令 $\xi=c(x-v t)$, 则 $u(x, t)=U(\xi)$ ，有</p>
+<p>$$
+\begin{equation}
+\frac{\partial}{\partial t} \rightarrow-c v \frac{\mathrm{d}}{\mathrm{d} \xi}, \frac{\partial}{\partial x} \rightarrow c \frac{\mathrm{d}}{\mathrm{d} \xi}
+\end{equation}
+$$</p>
+<p>然后, 将常微分方程积分, 直到微分方程中至少有一项不含导数项且尽可能 使方程中导数项具有较低阶数为止，积分常数都取为零. 引入 $Y=\tanh (\xi)$ 作为新的独立变量, 相应的导数变为</p>
+<div>
+$$
+\begin{equation}
+    \begin{aligned}
+    \frac{\mathrm{d}}{\mathrm{d} \xi} \rightarrow &\left(1-Y^2\right) \frac{\mathrm{d}}{\mathrm{d} Y} \\
+    \frac{\mathrm{d}^2}{\mathrm{d} \xi^2} \rightarrow &\left(1-Y^2\right)\left[-2 Y \frac{\mathrm{d}}{\mathrm{d} Y}+\left(1-Y^2\right) \frac{\mathrm{d}^2}{\mathrm{d} Y^2}\right] \\
+    \frac{\mathrm{d}^3}{\mathrm{d} \xi^3} \rightarrow &-2 Y\left(1-Y^2\right)\left[-2 Y \frac{\mathrm{d}}{\mathrm{d} Y}+\left(1-Y^2\right) \frac{\mathrm{d}^2}{\mathrm{d} Y^2}\right] \\
+    &+\left(1-Y^2\right)\left[-2\frac{\mathrm{d}}{\mathrm{d} Y}-2 Y \frac{\mathrm{d}^2}{\mathrm{d} Y^2}+\left(1-Y^2\right) \frac{\mathrm{d}^3}{\mathrm{d} Y^3}\right]
+    \end{aligned}
+\end{equation}
+$$
+</div>
+<h4 id="求解过程">求解过程</h4>
+<p>对于广义 KdV 方程, 运用双曲正切法进行求解<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>. 现在, 我们通过此方法对 Eq. $\eqref{eq_3}$ 中的形式进行求解. 通过 $\frac{\partial}{\partial t} \rightarrow-c v \frac{\mathrm{d}}{\mathrm{d} \xi}, \frac{\partial}{\partial x} \rightarrow c \frac{\mathrm{d}}{\mathrm{d} \xi}$ 变换为</p>
+<p>$$
+\begin{equation}
+-v U_{\xi}+6 U U_{\xi}+c^2 U_{\xi \xi \xi}=0,
+\end{equation}
+$$</p>
+<p>两边进行积分, 可以得到</p>
+<p>$$
+\begin{equation}
+-v U+3 U^2+c^2 U_{\xi \xi}=0
+\end{equation}
+$$</p>
+<p>引入 $Y=\tanh (\xi)$ 作为新的独立变量,方程相应的可以变化为</p>
+<p>$$
+\begin{equation}
+-v S(Y)+3 S^2(Y)+c^2\left(1-Y^2\right) \left(-2 Y \frac{\mathrm{d} S(Y)}{\mathrm{d} Y}+\left(1-Y^2\right) \frac{\mathrm{d}^2 S(Y)}{\mathrm{d} Y^2}\right)=0 \label{eq_12}
+\end{equation}
+$$</p>
+<p>对于 $S=\sum_{m=0}^m a_m Y^m$, 参数 $M$ 是通过平衡第二项(非线性)的阶数来确定. 不妨设 $S(Y)=\gamma-\gamma Y^2$, 代入 Eq. $\eqref{eq_12}$进行化简可以得到</p>
+<p>$$
+\begin{equation}
+-v+3\left(\gamma-\gamma Y^2\right)+c^2 \left(-2 Y \frac{\mathrm{d}\left(1-Y^2\right)}{\mathrm{d} Y}+\left(1-Y^2\right) \frac{\mathrm{d}^2\left(1-Y^2\right)}{\mathrm{d} Y^2}\right)=0
+\end{equation}
+$$</p>
+<p>比较 $Y^0$ 和 $Y^2$ 的系数:</p>
+<p>$$
+\begin{equation}
+\begin{gathered}
+-v+3 \gamma-2 c^2=0 \
+-3 \gamma+4 c^2+2 c^2=0
+\end{gathered}
+\end{equation}
+$$</p>
+<p>现有三个末知数 $(v, \gamma, c)$ 和两个方程, 所以可以选择 $c$ 作为自由参数. 发现其它变量为 $\gamma=2 c^2, v=4 c^2$.</p>
+<p>最后, KdV 方程的孤波解为 <sup id="fnref1:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup> :</p>
+<div>
+$$
+\begin{equation}\begin{gathered}
+u(x,t) =2c^2\left\{1-\tanh^2\left[c\left(x-4c^2t\right)\right]\right\} \\
+=2c^2\sec h^2\left[c\left(x-4c^2t\right)\right] 
+\end{gathered}\end{equation}
+$$
+</div>
+<p>P.S. 其中用 Lax pair 推导的方式几经修改，修正了一些细节内容.</p>
+<h3 id="参考资料">参考资料</h3>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>Korteweg, Diederik Johannes, and Gustav De Vries. &ldquo;On the change of form of long waves advancing in a rectangular canal, and on a new type of long stationary waves.&rdquo; The London, Edinburgh, and Dublin Philosophical Magazine and Journal of Science 39.240 (1895): 422-443.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2">
+<p>Lax, Peter D. &ldquo;Integrals of nonlinear equations of evolution and solitary waves.&rdquo; Communications on pure and applied mathematics 21.5 (1968): 467-490.&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3">
+<p>Malfliet, Willy. &ldquo;Solitary wave solutions of nonlinear wave equations.&rdquo; American journal of physics 60.7 (1992): 650-654.&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref1:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+]]></content:encoded>
+    </item>
+  </channel>
+</rss>
