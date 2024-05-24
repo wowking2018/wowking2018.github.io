@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>物理 on Love and Share</title>
-    <link>http://localhost:1313/tags/%E7%89%A9%E7%90%86/</link>
-    <description>Recent content in 物理 on Love and Share</description>
+    <title>电子 on Love and Share</title>
+    <link>http://localhost:1313/tags/%E7%94%B5%E5%AD%90/</link>
+    <description>Recent content in 电子 on Love and Share</description>
     <generator>Hugo -- 0.126.1</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 29 Jun 2021 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/%E7%89%A9%E7%90%86/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/%E7%94%B5%E5%AD%90/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>忆阻器</title>
       <link>http://localhost:1313/posts/2021-06-29-memristor/</link>
