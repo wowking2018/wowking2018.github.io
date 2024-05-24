@@ -387,20 +387,22 @@ m\left(\frac{\mathrm{d}}{\mathrm{d} t}+\frac{1}{\tau}\right) \vec{v}=-e(\vec{E}+
 \end{equation}
 $$</p>
 <p>其中 $\tau$ 为电子的弛豫时间，$\frac{m \vec{v}}{\tau}$ 这一项表示电子运动过程中的碰撞效应，在一个二维系统中写为分量形式，当到达稳态时速度不随时间变化，已知电流密度 $J=n e v$，并令$\sigma=\lvert e \rvert n v, v=\lvert e \rvert \tau/ m$，写成矩阵形式为：</p>
-<p>$$
+<div>
+$$
 \begin{equation}
-\left[\begin{array}{l}
-J_{x} \
-J_{y}
-\end{array}\right]=\sigma\left[\begin{array}{cc}
-1 &amp; -\mu B \
-\mu B &amp; 1
-\end{array}\right]^{-1}\left[\begin{array}{c}
-E_{x} \
-E_{y}
-\end{array}\right]
+	\left[\begin{array}{l}
+		J_{x} \\
+		J_{y}
+	\end{array}\right]=\sigma\left[\begin{array}{cc}
+		1 & -\mu B \\
+		\mu B & 1
+	\end{array}\right]^{-1}\left[\begin{array}{c}
+		E_{x} \\
+		E_{y}
+	\end{array}\right]
 \end{equation}
-$$</p>
+$$
+</div>
 <p>当施加磁场后会使得矩阵出现了非对角元. 写成电阻形式 $E=\rho_{2 \times 2} J$，可以得到经典霍尔效应的电阻率：</p>
 <p>$$
 \begin{equation}
