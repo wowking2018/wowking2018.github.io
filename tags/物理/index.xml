@@ -1,290 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Posts on Love and Share</title>
-    <link>https://wowking2018.github.io/posts/</link>
-    <description>Recent content in Posts on Love and Share</description>
+    <title>物理 on Love and Share</title>
+    <link>http://localhost:1313/tags/%E7%89%A9%E7%90%86/</link>
+    <description>Recent content in 物理 on Love and Share</description>
     <generator>Hugo -- 0.126.1</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 30 Jul 2023 19:16:56 +0800</lastBuildDate>
-    <atom:link href="https://wowking2018.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 01 Jul 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/%E7%89%A9%E7%90%86/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>The Big Bang Theory-Physics Bowl Analysis</title>
-      <link>https://wowking2018.github.io/posts/2023-07-30-the-big-bang-theory-physics-bowl-analysis/</link>
-      <pubDate>Sun, 30 Jul 2023 19:16:56 +0800</pubDate>
-      <guid>https://wowking2018.github.io/posts/2023-07-30-the-big-bang-theory-physics-bowl-analysis/</guid>
-      <description>Introduction Physics Bowl 高中物理竞赛由美国物理教师协会 AAPT 主办，试题由协会注册的大学物理教授和教学经验丰富的高中物理老师组成理事会进行出题和评审. 物理碗的发明者</description>
-      <content:encoded><![CDATA[<h3 id="introduction">Introduction</h3>
-<p>Physics Bowl 高中物理竞赛由美国物理教师协会 AAPT 主办，试题由协会注册的大学物理教授和教学经验丰富的高中物理老师组成理事会进行出题和评审.</p>
-<p>物理碗的发明者是蒂姆·英格兹比 (Tim Ingoldsby) 和比尔·阿诺德 (Bill Arnold)，他们在1980年提出了一项物理竞赛的提案和指导方针，后来发展成为现在的物理碗.</p>
-<h3 id="how-to-solve-the-equation">How to solve the equation?</h3>
-<p>那么现在我们来看生活大爆炸中的这一幕，第一季第13集，Sheldon和Leonard，Rajesh，Howard 还有 Leslie 分为了两队进行对抗.</p>
-<img src="../pic/2023-07-30-The Big Bang Theory-Physics Bowl Analysis/fig1.png" style="zoom: 100%; display: block; margin: 0 auto;" width="500px" alt = "show me something"/>
-<p>其中带箭头的直线为电子，波浪线为光子，这个图表示的是电子 ($e^{-}$) 和负缪子 ($\mu$) 之间的弹性散射过程. 这个过程是通过交换一个虚光子 ($\gamma$) 实现的，所以图中有一条波浪线. 式子中的各个符号表示了初末态的动量 $p$ 和自旋 $s$，以及光子的动量 $q$. 这个式子计算的是散射矩阵（S-matrix）的矩阵元，表示散射过程的概率幅<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>.</p>
-<p>这是QED的基本费曼图之一，其中Leonard，Rajesh，Howard的反应看上去并不知道这个题目这是极为不合理的，而且以剧中Sheldon的能力肯定能够解决这个问题. 不管怎样，看门人 (janitor) 回答说正确的答案是 $-8 \pi \alpha$. 以我个人所收集到的资料，至少在没有附加条件的情况下是无法得到这个答案的<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>，题目中给出的积分是</p>
-<p>$$
-\begin{equation}
-\begin{aligned}
-(2\pi)^4\int[\overline{\upsilon}^{(s_3)}(p_3)(i\sqrt{4\pi\alpha}\gamma^{\mu})\upsilon^{(s_1)}(p_1)]\frac{ig_{\mu\nu}}{q^{2}}[\overline{\upsilon}^{(s_4)}(p_4)(i\sqrt{4\pi\alpha}\gamma^{\mu})\upsilon^{(s_2)}(p_2)] \\
-x\delta^{(4)}(p_1-p_3-q)\delta^{(4)}(p_2+q-p_4)\mathrm{d}^4q
-\end{aligned}
-\end{equation}
-$$</p>
-<p>后续的过程中我会保持与题目中一致的记号进行推导. 首先，这并不是一个方程，台词中所说的 “Solve the equation” 显然是不对的，但为了保持统一我们暂时默认用积分式来代指这个式子. 同时对这个式子作相应的修改，去掉了 $x$，同时如果是负缪子应该用 $u$ 来表示</p>
-<p>$$
-\begin{equation}
-\begin{aligned}
-(2\pi)^4\int[\overline{\upsilon}^{(s_3)}(p_3)(i\sqrt{4\pi\alpha}\gamma^{\mu})\upsilon^{(s_1)}(p_1)]\frac{ig_{\mu\nu}}{q^{2}}[\overline{u}^{(s_4)}(p_4)(i\sqrt{4\pi\alpha}\gamma^{\nu})u^{(s_2)}(p_2)]  \\
-\delta^{(4)}(p_1-p_3-q)\delta^{(4)}(p_2+q-p_4)\mathrm{d}^4q
-\end{aligned} \label{eq2}
-\end{equation}
-$$</p>
-<p>根据狄拉克函数的计算规则有 $q = p_1- p_3 = p_4- p_2$时，对于 Eq. \eqref{eq2} 中其余项进行合并可以得到</p>
-<p>$$
-\int \delta^{(4)}(p_1-p_3-q)\delta^{(4)}(p_2+q-p_4)\mathrm{d}^4q = 1.
-$$</p>
-<p>积分式可以转化为</p>
-<p>$$
-\begin{equation}
-i{\cal M}=\frac{-i4\pi\alpha}{q^{2}}g_{\mu\nu}\left[\bar{\upsilon}^{(s_3)}\left(p_{3}\right)\gamma^{\mu}\upsilon^{(s_1)}\left(p_{1}\right)\right]\cdot[\bar{u}^{(s_4)}\left(p_{4}\right)\gamma^{\nu}u^{(s_2)}\left(p_{2}\right)]. \label{eq3}
-\end{equation}
-$$</p>
-<p>根据动量守恒可以得到 $(p_1 - p_3)^2 = 2p^2 (1-\cos \theta)$，$\theta$ 是散射粒子的夹角，对于中括号内的项可以表示为</p>
-<p>$$
-\begin{equation}
-\bar{\upsilon}(p^{\prime})\gamma^{\mu}\upsilon(p)=\left(m_e-E_e-\frac{p^2\cos\theta}{m_e+E_e},p\sin\theta,ip\sin\theta,p(1-\cos\theta)\right)<br>
-\end{equation}
-$$</p>
-<p>其中， $m_{e}$ 是电子质量，$E_{e}$ 是对应能量，$p, p^{\prime}$ 是散射进入和散射弹出的动量. 如果假设粒子是 ultra-relativistic，即 $E_{e}\approx E_{\mu}\gg m_{\mu}$，上式可以表示为(两项同理)</p>
-<p>$$
-\begin{equation}
-\bar{\upsilon}(p^{\prime})\gamma^{\mu}\upsilon(p)\rightarrow p(1-\cos\theta,\sin\theta,i\sin\theta,1-\cos\theta)
-\end{equation}
-$$</p>
-<p>故可得到 Eq. \eqref{eq3} 中的项为</p>
-<p>$$
-\begin{equation}
-g_{\mu\nu}\left[\bar{v}^{(s_{3})}\left(p_{3}\right)\gamma^{\mu}v^{(s_{1})}\left(p_{1}\right)\right]\cdot\left[\bar{u}^{(s_{4})}\left(p_{4}\right)\gamma^{\nu}u^{(s_{2})}\left(p_{2}\right)\right] \approx 2 p^2 (1-\cos \theta)^2
-\end{equation}
-$$</p>
-<p>其结果并不影响我们计算散射矩阵元，将 Eq. (6) 代入散射矩阵元，可以得到</p>
-<p>$$
-\begin{equation}
-\mathcal{M} = - 4 \pi \alpha (1-\cos \theta).
-\end{equation}
-$$</p>
-<p>所以如果图中问题是计算完全散射矩阵元，即 $\theta = \pi$，那么结果就是管理员所说的</p>
-<p>$$
-\begin{equation}
-\mathcal{M} = -8\pi \alpha.
-\end{equation}
-$$</p>
-<p>这个题目其实并不是很难，只要掌握了量子场论中的费曼规则，就可以根据图形把式子写出来. 但是在剧中，谢尔顿和他的队友们都没有回答出来，而是被一个门卫大叔轻松地说出了正确答案. 这不过是剧组的安排罢了，说多了都是剧情需要！</p>
-<h3 id="reference">Reference</h3>
-<div class="footnotes" role="doc-endnotes">
-<hr>
-<ol>
-<li id="fn:1">
-<p><a href="https://www.zhihu.com/question/22568808">生活大爆炸第一季13集物理碗最后一题到底有多难？</a>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
-</li>
-<li id="fn:2">
-<p><a href="https://www.scribd.com/doc/58206115/Tbbt-Physics-Bowl-Analysis">TBBT Physics Bowl [ANALYSIS OF THE LAST QUESTION]</a>&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
-</li>
-</ol>
-</div>
-]]></content:encoded>
-    </item>
-    <item>
-      <title>KdV 方程求解及其背景</title>
-      <link>https://wowking2018.github.io/posts/2023-07-09-the-kdv-equation/</link>
-      <pubDate>Sun, 09 Jul 2023 19:16:56 +0800</pubDate>
-      <guid>https://wowking2018.github.io/posts/2023-07-09-the-kdv-equation/</guid>
-      <description>背景介绍 孤子的发现应追溯到1834年的夏日，英国科学家 J.S.Russel 骑马正沿着一条运河岸道旅行，偶然发现在狭窄的河床中行走的船突然停止前进，被船体带动的</description>
-      <content:encoded><![CDATA[<h3 id="背景介绍">背景介绍</h3>
-<p>孤子的发现应追溯到1834年的夏日，英国科学家 <em>J.S.Russel</em> 骑马正沿着一条运河岸道旅行，偶然发现在狭窄的河床中行走的船突然停止前进，被船体带动的水团积聚在船头周围并剧烈地翻动着. 不久，一个圆形且轮廓分明的巨大孤立波峰开始形成，并急速离开船头向前运动. 波长约 10 米，高约 0.5 米，在行进中波的形状和速度并无明显变化，以后高度逐渐下降，在跟踪至三公里后，终于消失在蜿蜒的河道上. 这次发现的奇特景观促使 <em>Russel</em> 开始广泛的水波实验研究. 他称这沿着狭窄通道传播的、保持形状和速度不变的水包为“伟大的孤立波”，并意识到这是流体力学中某方程的稳定解. 然而, 由于当时数学水平与计算技术的限制，罗素的研究没有取得满意的进展，直到1895年，荷兰著名数学家 <em>Korteweg</em> 和他的学生 <em>de Vries</em> 在对孤波进行全面分析后指出这种波可近似为小振幅的长波，并以此建立了浅水波运动方程<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>：</p>
-<p>$$
-\begin{equation}
-\frac{\partial \eta}{\partial \tau}=\sqrt{\frac{g}{h}} \frac{\partial}{\partial \xi}\left(\frac{3}{4} \eta^2+\alpha \eta+\frac{\sigma}{2} \frac{\partial^2 \eta}{\partial \xi^2}\right), \label{eq_1}
-\end{equation}
-$$</p>
-<p>其中, $\sigma=\frac{1}{3} h^3-\frac{T h}{\rho g}, \eta$ 为波面高度, $h$ 为水深, $g$ 为重力加速度, $\rho$ 是水的密度, $\alpha$ 是与水的匀速流动有关的小常数, $T$ 是水的表面张力. 此后 Korteweg 和 de Vries 利用行波法求出与 Russel 描述一致的孤波解, 争论才告终止.</p>
-<p>如果作以下变换</p>
-<p>$$
-\begin{equation}
-t = \frac{1}{2} \sqrt{\frac{g}{h \sigma}}\tau, \quad x = -\frac{\xi}{\sqrt{\sigma}}, \quad u=\frac{1}{2}\eta +\frac{1}{3}\alpha
-\end{equation}
-$$</p>
-<p>则 Eq. $\eqref{eq_1}$ 可写成标准的形式</p>
-<p>$$
-\begin{equation}
-u_t+u_{x x x}+6 u u_x=0 \label{eq_3}
-\end{equation}
-$$</p>
-<p>后人为了纪念这两位伟大的学者对孤波作出的贡献将 Eq. $\eqref{eq_1}$ 或 Eq. $\eqref{eq_3}$ 称为 <em>KdV</em> 方程.</p>
-<h3 id="kdv-方程的推导">KdV 方程的推导</h3>
-<p>1968年，Lax 曾提出了一种用线性算子导出孤子方程的方法 <sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>, 具体计算方法如下. 首先线性算子 $\mathcal{L}$ 满足</p>
-<p>$$
-\begin{equation}
-\mathcal{L} \phi=\lambda \phi . \label{eq_4}
-\end{equation}
-$$</p>
-<p>其中 $\lambda$ 为谱参数, 如果只考虑等谱情况 ( $\lambda$ 与时间无关), 即 $\lambda_t=0$，其次 $\phi$ 还满足</p>
-<p>$$
-\begin{equation}
-\phi_t=\mathcal{A} \phi, \label{eq_5}
-\end{equation}
-$$</p>
-<p>其中 $\mathcal{A}$ 也是线性算子. 将 Eq. $\eqref{eq_4}$ 对 $t$ 求导, 同时结合 Eq. $\eqref{eq_5}$ 有:</p>
-<p>$$
-\begin{equation}
-\mathcal{L}_t \phi+\mathcal{L}\mathcal{A} \phi=\mathcal{A}\mathcal{L} \phi
-\end{equation}
-$$</p>
-<p>从而有</p>
-<p>$$
-\begin{equation}
-\mathcal{L}_t=\mathcal{A}\mathcal{L} - \mathcal{L}\mathcal{A} = [\mathcal{A}, \mathcal{L}] .
-\end{equation}
-$$</p>
-<p>这便是著名的 Lax 方程, 其中 $\mathcal{L}, \mathcal{A}$ 称为 Lax 对. 这里给出一种由 Lax 对进行推导得出 KdV 方程的较为简单的方式， 取 $\mathcal{L}$ 为 Hamilton 算子 $\mathcal{L}=\partial^2 _{x} - u(x, t)$ (实际上Lax对确实和薛定谔方程是有联系的)， $\mathcal{A}$ 为反对称算子 $\mathcal{A}=\alpha \partial_x^3 + B(x,t) \partial_x+ C(x,t) $ ， 其中 $\alpha$ 是常数， $B(x, t), C(x, t)$ 是待定的项, 则</p>
-<div>
-$$
-\begin{equation}
-    \begin{aligned}
-        \mathcal{A}\mathcal{L} & =\left(\alpha \partial_x^3 + B(x,t) \partial_x+ C(x,t) \right)\left(\partial^2 _x - u\right) \\
-        & = \alpha \partial_x^5 - \alpha(u_{xxx}+3u_{xx}\partial_{x} + 3u_{x}\partial_{x}^2 + u\partial_{x}^3) \\
-        & + B(\partial_{x}^3-u_{x}-u\partial_{x}) + C(\partial_{x}^2-u)\\
-        \mathcal{L}\mathcal{A} & =\left(\partial^2 _x - u\right)\left(\alpha \partial_x^3 + B(x,t) \partial_x+ C(x,t) \right) \\
-        & =  \alpha \partial_x^5 +(B_{xx}\partial_{x} + 2B_{x}\partial_{x}^2 + B \partial_{x}^3) + (C_{xx}+2C_{x}\partial_{x} + C\partial_{x}^2) \\
-        & - u\left(\alpha \partial_x^3 + B \partial_x+ C \right)
-    \end{aligned}
-\end{equation}
-$$
-</div>
-<p>由这两个算子便有</p>
-<div>
-$$
-\begin{equation}
-    \begin{aligned}
-        u _{t} & =\mathcal{A}\mathcal{L} -\mathcal{L}\mathcal{A} \\
-        & = -(3 \alpha u_{x}+2B_{x})\partial_{x}^2 -(3\alpha u_{xx} + B_{xx}+2C_{x})\partial_{x} +\alpha u_{xxx} - Bu_{x} -C_{xx}.
-    \end{aligned}
-\end{equation}
-$$
-</div>
-<p>其中等式右边有关 $\partial_{x}$ 的项都为 $0$，可得</p>
-<p>$$
-\begin{equation}
-\begin{aligned}
-&amp;3 \alpha u_{x}+2B_{x} = 0 \
-&amp;3\alpha u_{xx}+B_{xx}+2C_{x} = 0
-\end{aligned}
-\end{equation}
-$$</p>
-<p>$$
-f(x) = f(a) + f’(a)(x-a) + \frac{f’’(a)}{2!}(x-a)^2 + \cdots + \frac{f^{(n)}(a)}{n!}(x-a)^n + R_n(x)
-$$</p>
-<p>进行积分后可以得到</p>
-<p>$$
-\begin{equation}
-\begin{aligned}
-&amp;B = -\frac{3}{2} \alpha u \
-&amp;C = -\frac{3}{2} \alpha u_{x}+\frac{1}{2} B_{x} = -\frac{3}{4}\alpha u_{x}
-\end{aligned}
-\end{equation}
-$$</p>
-<p>可以得到 $u_{t} = \alpha u_{xxx} - Bu_{x} -C_{xx}= \frac{1}{4}\alpha u_{xxx}+\frac{3}{2}\alpha u u_{x}$， 取 $\alpha=-4$, 即为 $u_t+u_{x x x}+6 u u_x=0$.</p>
-<h3 id="kdv方程求解">KdV方程求解</h3>
-<h4 id="双曲正切法">双曲正切法</h4>
-<p>首先, 运用行波法将所求解的非线性偏微分方程转化为非线性常微分方程, 即令 $\xi=c(x-v t)$, 则 $u(x, t)=U(\xi)$ ，有</p>
-<p>$$
-\begin{equation}
-\frac{\partial}{\partial t} \rightarrow-c v \frac{\mathrm{d}}{\mathrm{d} \xi}, \frac{\partial}{\partial x} \rightarrow c \frac{\mathrm{d}}{\mathrm{d} \xi}
-\end{equation}
-$$</p>
-<p>然后, 将常微分方程积分, 直到微分方程中至少有一项不含导数项且尽可能 使方程中导数项具有较低阶数为止，积分常数都取为零. 引入 $Y=\tanh (\xi)$ 作为新的独立变量, 相应的导数变为</p>
-<div>
-$$
-\begin{equation}
-    \begin{aligned}
-    \frac{\mathrm{d}}{\mathrm{d} \xi} \rightarrow &\left(1-Y^2\right) \frac{\mathrm{d}}{\mathrm{d} Y} \\
-    \frac{\mathrm{d}^2}{\mathrm{d} \xi^2} \rightarrow &\left(1-Y^2\right)\left[-2 Y \frac{\mathrm{d}}{\mathrm{d} Y}+\left(1-Y^2\right) \frac{\mathrm{d}^2}{\mathrm{d} Y^2}\right] \\
-    \frac{\mathrm{d}^3}{\mathrm{d} \xi^3} \rightarrow &-2 Y\left(1-Y^2\right)\left[-2 Y \frac{\mathrm{d}}{\mathrm{d} Y}+\left(1-Y^2\right) \frac{\mathrm{d}^2}{\mathrm{d} Y^2}\right] \\
-    &+\left(1-Y^2\right)\left[-2\frac{\mathrm{d}}{\mathrm{d} Y}-2 Y \frac{\mathrm{d}^2}{\mathrm{d} Y^2}+\left(1-Y^2\right) \frac{\mathrm{d}^3}{\mathrm{d} Y^3}\right]
-    \end{aligned}
-\end{equation}
-$$
-</div>
-<h4 id="求解过程">求解过程</h4>
-<p>对于广义 KdV 方程, 运用双曲正切法进行求解<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>. 现在, 我们通过此方法对 Eq. $\eqref{eq_3}$ 中的形式进行求解. 通过 $\frac{\partial}{\partial t} \rightarrow-c v \frac{\mathrm{d}}{\mathrm{d} \xi}, \frac{\partial}{\partial x} \rightarrow c \frac{\mathrm{d}}{\mathrm{d} \xi}$ 变换为</p>
-<p>$$
-\begin{equation}
--v U_{\xi}+6 U U_{\xi}+c^2 U_{\xi \xi \xi}=0,
-\end{equation}
-$$</p>
-<p>两边进行积分, 可以得到</p>
-<p>$$
-\begin{equation}
--v U+3 U^2+c^2 U_{\xi \xi}=0
-\end{equation}
-$$</p>
-<p>引入 $Y=\tanh (\xi)$ 作为新的独立变量,方程相应的可以变化为</p>
-<p>$$
-\begin{equation}
--v S(Y)+3 S^2(Y)+c^2\left(1-Y^2\right) \left(-2 Y \frac{\mathrm{d} S(Y)}{\mathrm{d} Y}+\left(1-Y^2\right) \frac{\mathrm{d}^2 S(Y)}{\mathrm{d} Y^2}\right)=0 \label{eq_12}
-\end{equation}
-$$</p>
-<p>对于 $S=\sum_{m=0}^m a_m Y^m$, 参数 $M$ 是通过平衡第二项(非线性)的阶数来确定. 不妨设 $S(Y)=\gamma-\gamma Y^2$, 代入 Eq. $\eqref{eq_12}$进行化简可以得到</p>
-<p>$$
-\begin{equation}
--v+3\left(\gamma-\gamma Y^2\right)+c^2 \left(-2 Y \frac{\mathrm{d}\left(1-Y^2\right)}{\mathrm{d} Y}+\left(1-Y^2\right) \frac{\mathrm{d}^2\left(1-Y^2\right)}{\mathrm{d} Y^2}\right)=0
-\end{equation}
-$$</p>
-<p>比较 $Y^0$ 和 $Y^2$ 的系数:</p>
-<p>$$
-\begin{equation}
-\begin{gathered}
--v+3 \gamma-2 c^2=0 \
--3 \gamma+4 c^2+2 c^2=0
-\end{gathered}
-\end{equation}
-$$</p>
-<p>现有三个末知数 $(v, \gamma, c)$ 和两个方程, 所以可以选择 $c$ 作为自由参数. 发现其它变量为 $\gamma=2 c^2, v=4 c^2$.</p>
-<p>最后, KdV 方程的孤波解为 <sup id="fnref1:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup> :</p>
-<div>
-$$
-\begin{equation}\begin{gathered}
-u(x,t) =2c^2\left\{1-\tanh^2\left[c\left(x-4c^2t\right)\right]\right\} \\
-=2c^2\sec h^2\left[c\left(x-4c^2t\right)\right] 
-\end{gathered}\end{equation}
-$$
-</div>
-<p>P.S. 其中用 Lax pair 推导的方式几经修改，修正了一些细节内容.</p>
-<h3 id="参考资料">参考资料</h3>
-<div class="footnotes" role="doc-endnotes">
-<hr>
-<ol>
-<li id="fn:1">
-<p>Korteweg, Diederik Johannes, and Gustav De Vries. &ldquo;On the change of form of long waves advancing in a rectangular canal, and on a new type of long stationary waves.&rdquo; The London, Edinburgh, and Dublin Philosophical Magazine and Journal of Science 39.240 (1895): 422-443.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
-</li>
-<li id="fn:2">
-<p>Lax, Peter D. &ldquo;Integrals of nonlinear equations of evolution and solitary waves.&rdquo; Communications on pure and applied mathematics 21.5 (1968): 467-490.&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
-</li>
-<li id="fn:3">
-<p>Malfliet, Willy. &ldquo;Solitary wave solutions of nonlinear wave equations.&rdquo; American journal of physics 60.7 (1992): 650-654.&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref1:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
-</li>
-</ol>
-</div>
-]]></content:encoded>
-    </item>
-    <item>
-      <title>量子分形世界-Hofstadter蝴蝶</title>
-      <link>https://wowking2018.github.io/posts/2023-07-01-hofstadter-butterfly/</link>
-      <pubDate>Sat, 01 Jul 2023 12:14:32 +0800</pubDate>
-      <guid>https://wowking2018.github.io/posts/2023-07-01-hofstadter-butterfly/</guid>
-      <description>从霜花到海岸线，自然界中分形无处不在，近现代物理学中同样不断能够找到分形的影子. 本文回顾了通过类比 Weierstrass 函数，可以从量子气体中寻求到相应的动力学</description>
-      <content:encoded><![CDATA[<p>从霜花到海岸线，自然界中分形无处不在，近现代物理学中同样不断能够找到分形的影子. 本文回顾了通过类比 Weierstrass 函数，可以从量子气体中寻求到相应的动力学分形. 随后，主要详细讲解了一种有趣的量子分形现象 —Hofstadter蝴蝶. 对于二维晶格的体系，加上对应的磁通，提取系统本征能量后便可以得到这种美丽的分形图案，最后举例了一些最新的相关的研究情况. (P.S. 这篇文章是我的课程设计，再次回看的时候添加了一些新内容，对以前的东西也有了新的理解.)</p>
-<h3 id="引言">引言</h3>
+      <title>量子分形</title>
+      <link>http://localhost:1313/posts/2023-07-01-%E9%87%8F%E5%AD%90%E5%88%86%E5%BD%A2hofstadter%E8%9D%B4%E8%9D%B6/</link>
+      <pubDate>Sat, 01 Jul 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/2023-07-01-%E9%87%8F%E5%AD%90%E5%88%86%E5%BD%A2hofstadter%E8%9D%B4%E8%9D%B6/</guid>
+      <description>量子分形-Hofstadter蝴蝶 从霜花到海岸线，自然界中分形无处不在，近现代物理学中同样不断能够找到分形的影子. 本文回顾了通过类比 Weierstrass 函数，</description>
+      <content:encoded><![CDATA[<h2 id="量子分形-hofstadter蝴蝶">量子分形-Hofstadter蝴蝶</h2>
+<p>从霜花到海岸线，自然界中分形无处不在，近现代物理学中同样不断能够找到分形的影子. 本文回顾了通过类比 Weierstrass 函数，可以从量子气体中寻求到相应的动力学分形. 随后，主要详细讲解了一种有趣的量子分形现象 —Hofstadter蝴蝶. 对于二维晶格的体系，加上对应的磁通，提取系统本征能量后便可以得到这种美丽的分形图案，最后举例了一些最新的相关的研究情况. (P.S. 这篇文章是我的课程设计，再次回看的时候添加了一些新内容，对以前的东西也有了新的理解.)</p>
+<h3 id="1-引言">1. 引言</h3>
 <p>借用一句古语——“一花一世界，一树一菩提”，说的是从细微之处洞察宏观的哲学思考，而“一即是全，全即是一”，这是对分形最传神的表达. 每当看到那一张张分形图案时，不免思考这样美丽的图案是如何生成的，“分形”一出现便引起了年幼时我的兴趣. 现如今，随着电脑技术的兴起，分形被广泛运用到复杂图像的产生和处理上，其中包括大量电影里的星球表面，山川起伏的画面.</p>
 <p>1861年，德国数学家魏尔施特拉斯（Karl Theodor Wilhelm Weierstrass, 1815-1897) 发现了一个函数：</p>
 <p>$$
@@ -294,7 +26,7 @@ f(x)=\sum_{n=0}^{\infty} a^{n} \cos \left(b^{n} \pi x\right)
 $$</p>
 <p>其中 $0&lt;a&lt;1$，$b$为正奇数，且需要满足 $ab&gt;1+\frac{3}{2}\pi$，这个函数以及它处处连续而又处处不可导的证明首次出现在魏尔施特拉斯于1872年7月18日在普鲁士科学院出版的一篇论文中.</p>
 <p>从现在的数学角度看，毫无疑问这是一条分形曲线，然而“分形”这个概念直到一个世纪之后的1975年才由 Mandelbrot 提出来<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>. 在这里尝试一个简单的画图，Weierstrass函数有无穷项，但是随着 $n \to \infty, a^{n} \cos \left(b^{n} \pi x\right)\to 0$，故可用有限项作为代替进行处理.</p>
-<img src="../pic/2023-07-01-Hofstadter Butterfly/fig1.png" style="zoom: 100%; display: block; margin: 0 auto;" width="500px" alt = "show me something"/>
+<img src="https://wowking2018.github.io/img/blog17/fig1.png" style="zoom: 100%;" width="500px"/>
 <div class="highlight"><div style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 1
@@ -339,8 +71,8 @@ $$</p>
 </span></span><span style="display:flex;"><span><span style="color:#fff;font-weight:bold">end</span>	
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h3 id="量子气体中的动力学分形">量子气体中的动力学分形</h3>
-<h4 id="能量标度">能量标度</h4>
+</div><h3 id="2-量子气体中的动力学分形">2. 量子气体中的动力学分形</h3>
+<h4 id="21-能量标度">2.1 能量标度</h4>
 <p>上述的函数我们看起来如此奇怪，但却可以把它用在量子气体中. 类比于传统意义上的离散标度对称性 $W(b x) \simeq a^{-1} W(x)$ (简而言之就是缩放后的自相似，discrete scaling symmetry)，在谐振二体相互作用的三粒子系统中，也有类似的 <sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>：</p>
 <p>$$
 \begin{equation}
@@ -353,13 +85,13 @@ $$</p>
 \mathcal{L}(t) \propto \sum_{n=0}^{N} \lambda^{-n D} e^{-(i / \hbar) \lambda^{2 n} E_{0} t}
 \end{equation}
 $$</p>
-<h4 id="loschmidt-振幅分形图像">Loschmidt 振幅“分形”图像</h4>
+<h4 id="22-loschmidt-振幅分形图像">2.2 Loschmidt 振幅“分形”图像</h4>
 <p>通过类比的方法，选择初始波函数、测量、维度、适当的能量和时间尺度的要求，便可以用超冷量子气体来实现在时域上表现出分形行为<sup id="fnref1:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>.</p>
-<img src="../pic/2023-07-01-Hofstadter Butterfly/fig2.png" style="zoom: 100%; display: block; margin: 0 auto;" width="500px" alt = "show me something"/>
+<img src="https://wowking2018.github.io/img/blog17/fig2.png" style="zoom: 100%;" width="500px"/>
 <p>数值模拟表明，所有这些要求可以很容易地同时满足实际参数在冷原子气体.目前的计算是基于单个粒子图，忽略了粒子间的相互作用.</p>
-<h3 id="霍夫斯塔特蝴蝶hofstadters-butterfly">霍夫斯塔特蝴蝶(Hofstadter&rsquo;s Butterfly)</h3>
+<h3 id="3-霍夫斯塔特蝴蝶hofstadters-butterfly">3. 霍夫斯塔特蝴蝶(Hofstadter&rsquo;s Butterfly)</h3>
 <p>1976年，Douglas Hofstadter 在研究 Bloch 电子在外磁场作用下的量子现象时发现电子的能量和磁场强度可形成分形图像.</p>
-<h4 id="朗道能级">朗道能级</h4>
+<h4 id="31-朗道能级">3.1 朗道能级</h4>
 <p>事实上，从现在的眼光来看，Hofstadter&rsquo;s Butterfly本身就是朗道能级的二维格点版本. 带电粒子能量在一系列分立的数值中取值，形成朗道能级. 求解外加磁场下的薛定谔方程，从而得到电子能级的分布，即为朗道能级. 外加磁场为均匀磁场，沿 $z$ 方向，即 $\textbf{B}=(0,0,B)$.</p>
 <p>由 $\mathbf{B}=\nabla \times \hat{\mathbf{A}}$，取朗道规范可得磁矢势 $\hat{\mathbf{A}}=(-B y , 0, 0)$，式中 $\lvert {B} \rvert$，这样的规范下电子的正则动量为 $\hat{\textbf{p}}+q \hat{\textbf{A}}$，电子的哈密顿量可以写为：</p>
 <p>$$
@@ -379,7 +111,7 @@ $$</p>
 E_{n}^{\prime}=\left(n+\frac{1}{2} \hbar \omega\right), n \in N
 \end{equation}
 $$</p>
-<h4 id="量子霍尔效应与hofstadter蝴蝶的联系">量子霍尔效应与Hofstadter蝴蝶的联系</h4>
+<h4 id="32-量子霍尔效应与hofstadter蝴蝶的联系">3.2 量子霍尔效应与Hofstadter蝴蝶的联系</h4>
 <p>所谓量子霍尔效应与经典理论有何不同呢？在经典理论下，自由电子在电场 $\mathbf{E}$ 和磁场 $\mathbf{B}$ 的作用下的运动方程可写为：</p>
 <p>$$
 \begin{equation}
@@ -408,33 +140,29 @@ $$</p>
 \end{equation}
 $$</p>
 <p>然而，1980年德国物理学家 Klaus von Klitzing 发现在极低温、强磁场条件下，二维电子气的霍尔电阻出现了平台化特征，其值等于量子化电阻值 $(h/e^2)$ 的整数倍. 在霍尔电阻表现为量子化平台的同时，纵向电阻则趋于零<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>. 在实际实验研究中，更常采用的是固定二维电子气的密度，在维持流过样品的电流恒定的条件下，测量霍尔电压；随外加磁场的变化，可见在低磁场下霍尔电阻的确与外磁场的磁感应强度成线性关系；但在高磁场区则得到霍尔电阻的平台状结构.</p>
-<img src="../pic/2023-07-01-Hofstadter Butterfly/fig2_1.png" style="zoom: 100%; display: block; margin: 0 auto;" width="500px" alt = "show me something"/>
+<img src="https://wowking2018.github.io/img/blog17/fig2_1.png" style="zoom: 100%;" width="500px"/>
 <blockquote>
 <p>横向霍尔电阻的平台结构与纵向电阻的SdH振荡</p>
 </blockquote>
 <p>1976年，Douglas Hofstadter在研究Bloch电子在外磁场作用下的量子现象时发现电子的能量和磁场强度可形成分形图像. 在他的博士论文中研究了晶格里跃迁几率幅为复数的电子行为，这种复跃迁破坏了时间空间反演对称，后续又引出了Chern绝缘体的话题. 如图所示，蝴蝶能谱的整数区域其实就是霍尔电导率的量子化台阶. 正是这种有趣的量子分形现象———Hofstadter蝴蝶.</p>
-<img src="../pic/2023-07-01-Hofstadter Butterfly/fig2_2.png" style="zoom: 100%; display: block; margin: 0 auto;" width="500px" alt = "show me something"/>
+<img src="https://wowking2018.github.io/img/blog17/fig2_2.png" style="zoom: 100%;" width="500px"/>
 <blockquote>
 <p>横轴为复跃迁的复角度，纵轴为费米能. 用整数量子标记间隙，用相同颜色的间隙表示具有相同霍尔电导率量子数的量子霍尔态. <sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup></p>
 </blockquote>
-<h4 id="晶格中的分形状能谱">晶格中的“分形”状能谱</h4>
-<h5 id="二维方格子">二维方格子</h5>
+<h4 id="33-晶格中的分形状能谱">3.3 晶格中的“分形”状能谱</h4>
+<h5 id="331-二维方格子">3.3.1 二维方格子</h5>
 <p>首先，考虑如一个二维晶体体系，每个格点(交叉点)上放一个各向同性的电子轨道能级. 体系近似的哈密顿量可写成：</p>
-<div>
-$$
+<p>$$
 \begin{equation}
-	H=\sum_{m, n} H_{m, n}^{0}+\sum_{m, n, m^{\prime}, n^{\prime}} \frac{e^{2}}{4 \pi \varepsilon\left|\hat{\vec{r}}_{m, n}-\hat{\vec{r}}_{m^{\prime}, n^{\prime}}\right|}
+H=\sum_{m, n} H_{m, n}^{0}+\sum_{m, n, m^{\prime}, n^{\prime}} \frac{e^{2}}{4 \pi \varepsilon\left|\hat{\vec{r}}<em>{m, n}-\hat{\vec{r}}</em>{m^{\prime}, n^{\prime}}\right|}
 \end{equation}
-$$
-</div>
+$$</p>
 <p>每个格点上都有一个初始波函数 $H_{m, n}^{0} \vert m, n\rangle=\mu \vert m, n\rangle$，且认为不同格点之间的波函数相互正交 $\left\langle m^{\prime}, n^{\prime} \mid m, n\right\rangle=\delta_{m^{\prime}, m} \delta_{n^{\prime}, n}$. 直接可以计算哈密顿量矩阵，然后对角化哈密顿量，便得到了体系的本征能量以及本征波矢. 矩阵元为<sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup>：</p>
-<div>
-$$
+<p>$$
 \begin{equation}
-	\left\langle m, n|H| m^{\prime}, n^{\prime}\right\rangle=\mu \delta_{m, m^{\prime}} \delta_{n, n^{\prime}}+\left\langle m, n\left|\frac{e^{2}}{4 \pi \varepsilon\left|\hat{\vec{r}}_{m, n}-\hat{\vec{r}}_{m^{\prime}, n^{\prime}}\right|}\right| m^{\prime}, n^{\prime}\right\rangle
+\left\langle m, n|H| m^{\prime}, n^{\prime}\right\rangle=\mu \delta_{m, m^{\prime}} \delta_{n, n^{\prime}}+\left\langle m, n\left|\frac{e^{2}}{4 \pi \varepsilon\left|\hat{\vec{r}}<em>{m, n}-\hat{\vec{r}}</em>{m^{\prime}, n^{\prime}}\right|}\right| m^{\prime}, n^{\prime}\right\rangle
 \end{equation}
-$$
-</div>
+$$</p>
 <p>换用投影算符的形式来描述这样一个哈密顿量矩阵如下：</p>
 <p>$$
 \begin{equation}
@@ -453,7 +181,7 @@ $$</p>
 H=\sum_{m, n} t_{x}|m\rangle\langle m+1|\otimes| n\rangle\left\langle n\left|+t_{y}\right| m\right\rangle\langle m|\otimes| n\rangle\langle n+1|+h.c
 \end{equation}
 $$</p>
-<h5 id="加静磁场后的方格子">加静磁场后的方格子</h5>
+<h5 id="332加静磁场后的方格子">3.3.2加静磁场后的方格子</h5>
 <p>当静磁场对该晶格系统产生影响时，情况又会发生不一样的变化. 电磁场中自由电子的哈密顿量代入薛定谔方程后可以写为<sup id="fnref:6"><a href="#fn:6" class="footnote-ref" role="doc-noteref">6</a></sup>：</p>
 <p>$$
 \begin{equation}
@@ -461,7 +189,7 @@ $$</p>
 \end{equation}
 $$</p>
 <p>如果我们把波函数写成$\psi^{\prime}(\vec{r})=e^{-i \frac{e}{\hbar} \int_{r_{0}}^{\vec{r}} \vec{A}\left(\vec{r}^{\prime}\right) d \vec{r}^{\prime}} \psi(\vec{r})$，如果对它做一个空间平移，由于磁场的存在，这样的一个空间平移会给波函数带来一个额外的相位. 然后让每个格子都有一个$\phi$的磁通时，把哈密顿量写成矩阵的形式后就可以直接算本征值，提取系统的本征能量，便可以绘制出Hofstadter蝴蝶.</p>
-<img src="../pic/2023-07-01-Hofstadter Butterfly/fig3_1.png" style="zoom: 100%; display: block; margin: 0 auto;" width="300px" alt = "show me something"/>
+<img src="https://wowking2018.github.io/img/blog17/fig3_1.png" style="zoom: 100%;" width="500px"/>
 <blockquote>
 <p><a href="https://phys.org/news/2013-10-teams-cold-atoms-lasers-hofstadter.html">Schematic of the experiments by Aidelsburger et al.</a></p>
 </blockquote>
@@ -553,20 +281,18 @@ $$</p>
 </span></span><span style="display:flex;"><span>ylim([-<span style="color:#ff0;font-weight:bold">4</span>, <span style="color:#ff0;font-weight:bold">4</span>]);
 </span></span></code></pre></td></tr></table>
 </div>
-</div><img src="../pic/2023-07-01-Hofstadter Butterfly/fig3_2.png" style="zoom: 100%; display: block; margin: 0 auto;" width="800px" alt = "show me something"/>
+</div><img src="https://wowking2018.github.io/img/blog17/fig3_2.png" style="zoom: 100%;" width="500px"/>
 <blockquote>
 <p>正方形晶格有限截面的能谱数值模拟图：(a)$2×2$网格，(b)$3×3$网格，(c)$4×4$网格，(d)$6×6$网格，(e)$7×7$网格, (f)$10× 10$网格</p>
 </blockquote>
 <p>特别值得一提的是,如果对实空间上离散的Schródinger方程进行傅里叶变换，得到如下方程：</p>
-<div>
-$$
+<p>$$
 \begin{equation}
-	2 \cos \left(k_{1} a+\frac{2 \pi p r}{q}\right) \tilde{\psi}_{r}(\mathbf{k})+e^{i k_{2} a} \tilde{\psi}_{r+1}(\mathbf{k})+e^{-i k_{2} a} \tilde{\psi}_{r-1}(\mathbf{k})=-\frac{E(\mathbf{k})}{t} \tilde{\psi}_{r}(\mathbf{k}) \label{eq_16}
+2 \cos \left(k_{1} a+\frac{2 \pi p r}{q}\right) \tilde{\psi}<em>{r}(\mathbf{k})+e^{i k</em>{2} a} \tilde{\psi}<em>{r+1}(\mathbf{k})+e^{-i k</em>{2} a} \tilde{\psi}<em>{r-1}(\mathbf{k})=-\frac{E(\mathbf{k})}{t} \tilde{\psi}</em>{r}(\mathbf{k}) \label{eq_16}
 \end{equation}
-$$
-</div>
+$$</p>
 <p>其中 $\mathbf{k}=\left(k_{1}, k_{2}\right)$，Eq. $\eqref{eq_16}$就是Harper方程. 用数值方法求解时，如果我们不断改变 $\Phi / \Phi_{0}$ (即朗道能级简并度)时，结果也可以得到这样一个美丽的分形结构.</p>
-<h5 id="朗道扇形能谱">朗道扇形能谱</h5>
+<h5 id="333-朗道扇形能谱">3.3.3 朗道扇形能谱</h5>
 <p>对于无限二维方形晶格的紧束缚模型，具有能量色散关系：</p>
 <p>$$
 \begin{equation}
@@ -585,30 +311,30 @@ $$</p>
 \frac{E}{|t|}=-4+4 \pi \alpha\left(n+\frac{1}{2}\right) \label{eq_19}
 \end{equation}
 $$</p>
-<img src="../pic/2023-07-01-Hofstadter Butterfly/fig3_3.png" style="zoom: 100%; display: block; margin: 0 auto;" width="800px" alt = "show me something"/>
+<img src="https://wowking2018.github.io/img/blog17/fig3_3.png" style="zoom: 100%;" width="500px"/>
 <blockquote>
 <p>(a)$10× 10$方阵区的能谱;(b)朗道扇形能谱. 对于半满带的情况，化学势$\mu$设为零.</p>
 </blockquote>
 <p>根据图(b)所示,即为Eq. $\eqref{eq_19}$给出的朗道水平扇面. 正是这种朗道能级的扇形引起了德哈斯-范阿尔芬效应(De Haas-van Alphen effect,纯金属晶体的磁化强度随外加磁场的增加而发生振荡的现象)，在这些效应占据的朗道能级中，化学势 $\mu$ 和费米能量 $E_p$ 下降到下一个朗道能级. 同样，有限系统成键轨道的能量在稠密区域增加，在稀疏区域迅速下降，这些轨道在二维系统中表现出磁振荡的特征.</p>
-<h3 id="实验相关">实验相关</h3>
+<h3 id="4-实验相关">4. 实验相关</h3>
 <p>在凝聚态物理学中，Hofstadter蝴蝶理论描述了晶格中磁场中不相互作用的二维电子的光谱特性，并在整数量子霍尔效应理论和拓扑量子数理论中起着重要的作用，但由于该现象需要苛刻的实验条件，直到20年后才在实验上观察到这样一幅美丽的景象.</p>
 <p>1997年，Hofstadter蝴蝶在由一组散射体装备的微波波导的实验中得以再现<sup id="fnref:8"><a href="#fn:8" class="footnote-ref" role="doc-noteref">8</a></sup>. 正是由于散射体的微波波导的数学描述与磁场中的Bloch波之间的相似性，使得散射体周期序列的Hofstadter蝴蝶得以再现.</p>
 <center>
 <figure>
-<img src="../pic/2023-07-01-Hofstadter Butterfly/fig4_1a.png" style="zoom: 50%" width="50%"><img src="../pic/2023-07-01-Hofstadter Butterfly/fig4_1b.png" style="zoom: 50%" width="50%">
+<img src="https://wowking2018.github.io/img/blog17/fig4_1a.png" style="zoom: 50%" width="50%"><img src="https://wowking2018.github.io/img/blog17/fig4_1b.png" style="zoom: 50%" width="50%">
 </figure>
 </center>
 <blockquote>
 <p>(a)散射体周期性排列的透射光谱，图中上部是通过反射得到的可以看到前两个Bloch带，显示了Hofstadter蝴蝶的两个部分. (其中黑色和白色分别对应高透射率和低透射率); (b)四个Bloch纹，隐约可以看见每一个中的Hofstadter能谱.</p>
 </blockquote>
 <p>2017年9月，Google的John Martinis小组与CQT的Angelakis 小组合作发表了使用9个超导量子比特的相互作用光子，去模拟磁场中电子的2维结果<sup id="fnref:9"><a href="#fn:9" class="footnote-ref" role="doc-noteref">9</a></sup>，复现出了Hofstadter蝴蝶.</p>
-<img src="../pic/2023-07-01-Hofstadter Butterfly/fig4_2.png" style="zoom: 100%; display: block; margin: 0 auto;" width="800px" alt = "show me something"/>
+<img src="https://wowking2018.github.io/img/blog17/fig4_2.png" style="zoom: 100%;" width="500px"/>
 <blockquote>
 <p>(a)在无量纲磁场 $b$ 的 $100$ 个取值范围为 $0-1$ 时，恢复了Hofstadter蝴蝶；(b)对于每个 $b$ 值，识别出 $9$ 个峰，并将它们的位置绘制为一系列彩点，点的颜色是测量特征值与数值计算特征值之差的绝对值.</p>
 </blockquote>
 <p>2020年，有研究小组报告了在六方氮化硼基底上制造的石墨烯器件中存在霍夫施塔特蝴蝶光谱的证据<sup id="fnref:10"><a href="#fn:10" class="footnote-ref" role="doc-noteref">10</a></sup>. 在石墨烯晶格与氮化硼接近零角度，由外加磁场和大规模 moiré 结构之间的相互作用产生了蝴蝶型光谱.</p>
-<img src="../pic/2023-07-01-Hofstadter Butterfly/fig4_3.png" style="zoom: 100%; display: block; margin: 0 auto;" width="500px" alt = "show me something"/>
-<h3 id="结语">结语</h3>
+<img src="https://wowking2018.github.io/img/blog17/fig4_3.png" style="zoom: 100%" width="500px"/>
+<h3 id="5-结语">5. 结语</h3>
 <p>从霜花到海岸线，自然界中分形无处不在，近现代物理学中同样不断能够找到分形的影子. 这一种有趣的量子分形现象——Hofstadter蝴蝶，从它与整数量子霍尔效应的联系出发，最近火热的转角石墨烯体系、分数陈绝缘体等与其相关密切. 从现在的眼光来看，Hofstadter&rsquo;s Butterfly本身就是朗道能级的二维格点版本. 本文也讨论了对于二维晶格的体系，加上对应的磁通，提取系统本征能量后便可以得到一个美丽的分形图案. 但若要在实验上得以实现，需要极大的磁通，最后也举例了最新的实验观测情况. 实际上，Hofstadter蝴蝶中与之相关的物理现象有很多，例如分数量子霍尔效应也与之有重要的联系.</p>
 <h3 id="reference">Reference</h3>
 <div class="footnotes" role="doc-endnotes">
