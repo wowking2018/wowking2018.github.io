@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Wave physics as an analog recurrent neural network | Love and Share</title>
+<meta name="keywords" content="Machine learning">
+<meta name="description" content="RNN介绍 RNN(循环神经网络)是在自然语言处理NLP领域中最先被用起来的，比如，RNN可以为语言模型来建模. 循环神经网络种类繁多，最简单的">
+<meta name="author" content="wowking">
+<link rel="canonical" href="https://wowking2018.github.io/posts/2023-01-10-wave-physics-as-an-analog-recurrent-neural-network/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.fa3a950dc53e39fd52e88f8aa4fe3534775854957275bcd2b38a217fb10f2c14.css" integrity="sha256-&#43;jqVDcU&#43;Of1S6I&#43;KpP41NHdYVJVydbzSs4ohf7EPLBQ=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://wowking2018.github.io/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://wowking2018.github.io/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://wowking2018.github.io/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://wowking2018.github.io/apple-touch-icon.png">
+<link rel="mask-icon" href="https://wowking2018.github.io/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://wowking2018.github.io/posts/2023-01-10-wave-physics-as-an-analog-recurrent-neural-network/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+
+
+
+
+
+
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+            displayMath: [['$$','$$']], 
+            inlineMath: [['$','$']],
+        },
+        TeX: {equationNumbers: {autoNumber: "AMS"}},
+    });
+</script>
+
+
+
+
+
+
+  
+
+<meta property="og:title" content="Wave physics as an analog recurrent neural network" />
+<meta property="og:description" content="RNN介绍 RNN(循环神经网络)是在自然语言处理NLP领域中最先被用起来的，比如，RNN可以为语言模型来建模. 循环神经网络种类繁多，最简单的" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://wowking2018.github.io/posts/2023-01-10-wave-physics-as-an-analog-recurrent-neural-network/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-01-10T12:14:32+08:00" />
+<meta property="article:modified_time" content="2023-01-10T12:14:32+08:00" /><meta property="og:site_name" content="👋 Welcome" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Wave physics as an analog recurrent neural network"/>
+<meta name="twitter:description" content="RNN介绍 RNN(循环神经网络)是在自然语言处理NLP领域中最先被用起来的，比如，RNN可以为语言模型来建模. 循环神经网络种类繁多，最简单的"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://wowking2018.github.io/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Wave physics as an analog recurrent neural network",
+      "item": "https://wowking2018.github.io/posts/2023-01-10-wave-physics-as-an-analog-recurrent-neural-network/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Wave physics as an analog recurrent neural network",
+  "name": "Wave physics as an analog recurrent neural network",
+  "description": "RNN介绍 RNN(循环神经网络)是在自然语言处理NLP领域中最先被用起来的，比如，RNN可以为语言模型来建模. 循环神经网络种类繁多，最简单的",
+  "keywords": [
+    "Machine learning"
+  ],
+  "articleBody": "RNN介绍 RNN(循环神经网络)是在自然语言处理NLP领域中最先被用起来的，比如，RNN可以为语言模型来建模. 循环神经网络种类繁多，最简单的基本循环神经网络可以被理解为隐藏层内循环，如下图所示：\n如果我们把上面的图展开，循环神经网络也可以画成下面这个样子：\n现在看上去就比较清楚了，这个网络在 $t$ 时刻接收到输入 $\\mathrm{x}_ {t}$ 之后，隐藏层的值是 $\\mathrm{s} _ {t}$ ，输出值是 $\\mathrm{o}_ {t}$. 关键一点是， $\\mathrm{s}_ {t}$ 的值不仅仅取决于 $\\mathrm{x}_ {t}$ , 还取决于 $\\mathrm{s}_ {t-1}$ . 我们可以用下面的公式来表示循环神经网络的计算方法:\n$$ \\begin{equation} \\begin{aligned} \u0026 \\mathrm{o}_t=g\\left(V \\mathrm{~s}_t\\right)\\\\ \u0026 \\left.\\mathrm{s}_t=f\\left(U \\mathrm{x}_t+W \\mathrm{~s}_{t-1}\\right) \\right. \\end{aligned} \\label{eq1} \\end{equation} $$ 输出层是一个全连接层，也就是它的每个节点都和隐 藏层的每个节点相连. $\\mathrm{V}$ 是输出层的权重矩阵， $g$ 是激活函数. 隐藏层是循环层. ${U}$ 是输入 $x$ 的权重矩阵， ${W}$ 是上一次的值 $\\mathrm{s}_ {t-1}$ 作为这一次的 输入的权重矩阵， $f$是激活函数.\n从 Eq. \\eqref{eq1} 中我们可以看出，循环层和全连接层的区别就是循环层多了一个权重矩阵 $W$. 如果反复把隐藏层的计算公式带入到输出层，我们将得到:\n$$ \\begin{equation} \\begin{aligned} \\mathrm{o}_t \u0026 =g\\left(V \\mathrm{~s}_t\\right) \\\\ \u0026 =V f\\left(U \\mathrm{x}_t+W \\mathrm{~s}_{t-1}\\right) \\\\ \u0026 =V f\\left(U \\mathrm{x}_t+W f\\left(U \\mathrm{x}_{t-1}+W \\mathrm{~s}_{t-2}\\right)\\right) \\\\ \u0026 =V f\\left(U \\mathrm{x}_t+W f\\left(U \\mathrm{x}_{t-1}+W f\\left(U \\mathrm{x}_{t-2}+W \\mathrm{~s}_{t-3}\\right)\\right)\\right) \\\\ \u0026 =V f\\left(U \\mathrm{x}_t+W f\\left(U \\mathrm{x}_{t-1}+W f\\left(U \\mathrm{x}_{t-2}+W f\\left(U \\mathrm{x}_{t-3}+\\ldots\\right)\\right)\\right)\\right) \\end{aligned} \\end{equation} $$ 从上面可以看出，循环神经网络的输出值 $o_t$ ，是受前面历次输入值 $\\mathrm{x}_ t , \\mathrm{x}_ {t-1} , \\mathrm{x}_ {t-2} , \\mathrm{x}_ {t-3} , \\ldots$ 影响的. 有了以上的讲解，我们将很容易理解论文中的这一部分内容.\n$$ \\begin{equation} \\begin{gathered} \\boldsymbol{h}_t=\\sigma^{(h)}\\left(\\boldsymbol{W}^{(h)} \\cdot \\boldsymbol{h}_{t-1}+\\boldsymbol{W}^{(x)} \\cdot \\boldsymbol{x}_t\\right) \\\\ y_t=\\sigma^{(y)}\\left(\\boldsymbol{W}^{(y)} \\cdot \\boldsymbol{h}_t\\right) \\end{gathered} \\label{eq3} \\end{equation} $$ 引入波动方程与RNN相结合 波的标量分布为 $u(x, y, z)$ ，其含时演化过程可以由以下方程进行描述\n$$ \\begin{equation} \\frac{\\partial^2 u}{\\partial t^2}-c^2 \\cdot \\nabla^2 u=f \\end{equation} $$\n其中， $\\nabla^2=\\frac{\\partial^2}{\\partial x^2}+\\frac{\\partial^2}{\\partial y^2}+\\frac{\\partial^2}{\\partial z^2}$ 是Laplace算符, $c=c(x, y, z)$ 是空间中的波速且会随空间位置的不同发生变化， $f=f(x, y, z, t)$ 是原函数项. 对 Eq. 4 进行有限差分离散，时间步长为$\\Delta t$，得到递归关系方程\n$$ \\frac{u_{t+1}-2 u_t+u_{t-1}}{\\Delta t^2}-c^2 \\cdot \\nabla^2 u_t=f_t $$\n将以上的差分方程可以转化为\n$$ \\begin{equation} \\left[\\begin{array}{c} u_{t+1} \\\\ u_t \\end{array}\\right]=\\left[\\begin{array}{cc} 2+\\Delta t^2 \\cdot c^2 \\cdot \\nabla^2 \u0026 -1 \\\\ 1 \u0026 0 \\end{array}\\right] \\cdot\\left[\\begin{array}{c} u_t \\\\ u_{t-1} \\end{array}\\right]+\\Delta t^2 \\cdot\\left[\\begin{array}{c} f_t \\\\ 0 \\end{array}\\right] \\end{equation} $$ 结合 Eq. \\eqref{eq3} 我们很容易会得到相对应的形式\n$$ \\begin{equation} \\begin{aligned} \\boldsymbol{h}_t \u0026 =\\boldsymbol{A}\\left(\\boldsymbol{h}_{t-1}\\right) \\cdot \\boldsymbol{h}_{t-1}+\\boldsymbol{P}^{(\\mathrm{i})} \\cdot \\boldsymbol{x}_t \\\\ \\boldsymbol{y}_t \u0026 =\\left|\\boldsymbol{P}^{(\\mathrm{o})} \\cdot \\boldsymbol{h}_t\\right|^2 \\end{aligned} \\end{equation} $$ 方程中 $c=c(x, y, z)$ 部分对应于材料内的物理构型和布局. 与标准RNN类似，隐藏状态与波动方程输入和输出之间的联系由线性算子 $\\boldsymbol{P}^{(\\mathrm{i})}$ 和 $\\boldsymbol{P}^{(\\mathrm{o})}$ 定义. 现在我们可以对这两个线性算子进行详细的分析，根据文中作者的说法1\n$$ \\begin{equation} \\begin{aligned} \\boldsymbol{P}^{(\\mathrm{i})} \u0026 \\equiv\\left[\\begin{array}{c} \\boldsymbol{M}^{(\\mathrm{i})} \\\\ \\mathbf{o} \\end{array}\\right] \\\\ \\boldsymbol{P}^{(\\mathrm{o})} \u0026 \\equiv\\left[\\boldsymbol{M}^{(\\mathrm{o}) T}, \\mathbf{o}\\right] \\end{aligned} \\end{equation} $$ 其中，$\\mathrm{o}$ 是零矩阵，相对应的形式在于把输入向量 $\\boldsymbol{x}_ t$ 的输入写成矩阵向量的乘法形式：\n$$ \\Delta t^2 \\boldsymbol{f}_t\\equiv \\boldsymbol{M}^{(i)} \\cdot \\boldsymbol{x}_t $$\n特别注意，RNN在每个时间步的输出是由标量场的强度测量给出的，\n$$ \\boldsymbol{y}_ t=\\boldsymbol{M}^{(\\mathrm{o}) T} \\cdot \\boldsymbol{u}_t^2 $$\n以上便是一个简单的例子用来说明RNN与波动方程的联系.\n训练物理系统 该论文中演示了波动方程的动力学如何通过构造非均匀材料分布来训练来分类元音的分类，ae, ei, 和 iy. 图D中的黑色点源即为音源(类比为输入层)，通过中间浅色部分(隐藏层)传播，右边定义了三个探测点(输出层)，每个探测点分配给三个元音类中的一个，对相对应的结果进行反馈. 图C中的线即为三个元音的功率积分结果.\n为了方便数值结果演示，考虑由两种材料组成的二值化系统，归一化后的波速分别为 $c_0=1.0$ 和 $c_1=0.5$. 本文采用了反向优化的传播思路，Adam的方法对材料密度属性进行了优化，其优化结果被展示在下图D之中.\n引入一个吸收区域来近似一个对应的边界条件，对应于图B中的灰色区域. 此外，与传统的RNN不同，波动方程施加了能量守恒约束，防止隐态范数和输出信号的无限增长. 该区域由阻尼系数 $b(r, y)$ 定义，带阻尼的标量波动方程可以写为\n$$ \\begin{equation} \\frac{\\partial^2 u}{\\partial t^2}+2 b \\cdot \\frac{\\partial u}{\\partial t}=c^2 \\cdot \\nabla^2 u+f \\end{equation} $$\n其中，$u$ 为未知标量字段，$b$ 为阻尼系数. 在数学形式上，该论文对此简化为\n$$ \\begin{equation} b(u)=\\frac{b_0}{1+(\\frac{u}{u_\\mathrm{th}})^2}. \\end{equation} $$\n假设 $b$ 可以在空间上变化，但与频率无关. 对于以 $t$ 为索引的时间步长，用二阶微分的中心差分公式\n$$ \\begin{equation} \\frac{u_{t+1}-2 u_t+u_{t-1}}{\\Delta t^2}+2 b \\frac{u_{t+1}-u_{t-1}}{2 \\Delta t}=c^2 \\nabla^2 u_t+f_t \\end{equation} $$\n现在可以用 $u_{t+1}$ 形成一个递归关系，从而得到\n$$ \\begin{equation} \\begin{aligned} \u0026 \\left(\\frac{1}{\\Delta t^2}+\\frac{b}{\\Delta t}\\right) u_{t+1}-\\frac{2}{\\Delta t^2} u_t+\\left(\\frac{1}{\\Delta t^2}-\\frac{b}{\\Delta t}\\right) u_{t-1}=c^2 \\cdot \\nabla^2 u_t+f_t \\\\ \u0026 \\left(\\frac{1}{\\Delta t^2}+\\frac{b}{\\Delta t}\\right) u_{t+1}=\\frac{2}{\\Delta t^2} u_t-\\left(\\frac{1}{\\Delta t^2}-\\frac{b}{\\Delta t}\\right) u_{t-1}+c^2 \\cdot \\nabla^2 u_t+f_t \\\\ u_{t+1}= \u0026 \\left(\\frac{1}{\\Delta t^2}+\\frac{b}{\\Delta t}\\right)^{-1}\\left[\\frac{2}{\\Delta t^2} u_t-\\left(\\frac{1}{\\Delta t^2}-\\frac{b}{\\Delta t}\\right) u_{t-1}+c^2 \\cdot \\nabla^2 u_t+f_t\\right] \\end{aligned} \\end{equation} $$ 类比常规的波动方程形式，我们可以得到在论文中实际考虑阻尼系数项的形式：\n$$ \\begin{equation} \\left[\\begin{array}{c} u_{t+1} \\\\ u_t \\end{array}\\right]=\\left[\\begin{array}{cc} \\frac{2+\\Delta t^2 \\cdot c^2 \\cdot \\nabla^2}{1+\\Delta t \\cdot b} \u0026 \\frac{-1-\\Delta t \\cdot b}{1+\\Delta t \\cdot b} \\\\ 1 \u0026 0 \\end{array}\\right] \\cdot\\left[\\begin{array}{c} u_t \\\\ u_{t-1} \\end{array}\\right]+\\Delta t^2 \\cdot\\left[\\begin{array}{c} f_t \\\\ 0 \\end{array}\\right] \\end{equation} $$ 作者在文中提到在数值计算中，对于算符 $\\nabla^2$ 的处理采取了离散形式的处理\n$$ \\nabla^2 u_t=\\frac{1}{h^2}\\left[\\begin{array}{ccc} 0 \u0026 1 \u0026 0 \\\\ 1 \u0026 -4 \u0026 1 \\\\ 0 \u0026 1 \u0026 0 \\end{array}\\right] * u_t $$ 其中，$h$ 为空间网格的步长，同时$*$指的是卷积运算. 之所以采取了这样的一个形式，同样也是采用了二阶微分的近似. 首先引入这个刚刚讲过的二阶微分:\n$$ \\begin{equation} \\nabla^2 f=\\frac{\\partial^2 f}{\\partial x^2}+\\frac{\\partial^2 f}{\\partial y^2} \\end{equation} $$\n由联系二阶差分的思想:\n$$ \\begin{equation} \\begin{aligned} \u0026 \\frac{\\partial^2 f}{\\partial x^2}=f(x+1)-2f(x)+f(x-1) \\\\ \u0026 \\frac{\\partial^2 f}{\\partial y^2}=f(y+1)-2f(y)+f(y-1) \\end{aligned} \\end{equation} $$ 那么得到上述二阶微分：\n$$ \\begin{equation} \\begin{aligned} \\nabla^2 f \u0026=\\frac{\\partial^2 f}{\\partial x^2}+\\frac{\\partial^2 f}{\\partial y^2}\\\\ \u0026=[f(x+1, y)+f(x-1, y)+f(x, y+1)+f(x, y-1)-4 f(x, y)] \\end{aligned} \\end{equation} $$ 相对应的系数即为相应的矩阵形式\n$$ \\begin{equation} \\left[\\begin{array}{ccc} 0 \u0026 1 \u0026 0 \\\\ 1 \u0026 -4 \u0026 1 \\\\ 0 \u0026 1 \u0026 0 \\end{array}\\right] \\end{equation} $$ 训练数值模型及其相应结果 下图计算结果中图A-D代表着不同数据集对应的混淆矩阵. 在基于深度学习的分类识别领域中，经常采用统计学中的混淆矩阵（confusion matrix）来评价分类器的性能. 它是一种特定的二维矩阵：列代表预测的类别；行代表实际的类别.\n对角线上的值表示预测正确的数量或比例；非对角线元素是预测错误的部分. 混淆矩阵的对角线值越高越好，表明许多正确的预测. 特别是在各分类数据的数量不平衡的情况下，混淆矩阵可以直观的显示分类模型对应各个类别的准确率.\n该系统相对于训练数据集的平均准确率为 $92.6±1.1%$，测试数据集平均准确率为 $86.3±4.3 %$. 观察到该系统在ae元音上获得了近乎完美的预测性能，并且能够区分iy元音和ei元音，但准确性较低，特别是在来自测试数据集的未见样本中.\n总结 使用物理来执行计算的方法可能会成为模拟机器学习设备的新平台，相比通过计算机进行机器学习更自然、更有效地执行计算的潜力. 除此之外，这篇论文同样发人深省，在相对应的其它物理系统中仍然可以找到相似对应的结构，例如光学中的傍轴衍射方程和热传导方程，它们与波动方程都有相似的结构.\nReference Hughes, Tyler W., et al. “Wave physics as an analog recurrent neural network.” Science advances 5.12 (2019): eaay6946. ↩︎\n",
+  "wordCount" : "2346",
+  "inLanguage": "en",
+  "datePublished": "2023-01-10T12:14:32+08:00",
+  "dateModified": "2023-01-10T12:14:32+08:00",
+  "author":{
+    "@type": "Person",
+    "name": "wowking"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://wowking2018.github.io/posts/2023-01-10-wave-physics-as-an-analog-recurrent-neural-network/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Love and Share",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://wowking2018.github.io/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://wowking2018.github.io/" accesskey="h" title="Love and Share (Alt + H)">Love and Share</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://wowking2018.github.io/archives/" title="Archives">
+                    <span>Archives</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://wowking2018.github.io/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://wowking2018.github.io/search/" title="🔍 (Alt &#43; /)" accesskey=/>
+                    <span>🔍</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post" autonumbering>
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      Wave physics as an analog recurrent neural network
+    </h1>
+    <div class="post-meta"><span title='2023-01-10 12:14:32 +0800 CST'>2023-01-10</span>&nbsp;·&nbsp;5 min&nbsp;·&nbsp;wowking
+
+</div>
+  </header> <aside id="toc-container" class="toc-container wide">
+    <div class="toc">
+        <details  open>
+            <summary accesskey="c" title="(Alt + C)">
+                <span class="details">Table of Contents</span>
+            </summary>
+
+            <div class="inner"><ul>
+                    <li>
+                        <a href="#rnn%e4%bb%8b%e7%bb%8d" aria-label="RNN介绍">RNN介绍</a></li>
+                    <li>
+                        <a href="#%e5%bc%95%e5%85%a5%e6%b3%a2%e5%8a%a8%e6%96%b9%e7%a8%8b%e4%b8%8ernn%e7%9b%b8%e7%bb%93%e5%90%88" aria-label="引入波动方程与RNN相结合">引入波动方程与RNN相结合</a></li>
+                    <li>
+                        <a href="#%e8%ae%ad%e7%bb%83%e7%89%a9%e7%90%86%e7%b3%bb%e7%bb%9f" aria-label="训练物理系统">训练物理系统</a></li>
+                    <li>
+                        <a href="#%e8%ae%ad%e7%bb%83%e6%95%b0%e5%80%bc%e6%a8%a1%e5%9e%8b%e5%8f%8a%e5%85%b6%e7%9b%b8%e5%ba%94%e7%bb%93%e6%9e%9c" aria-label="训练数值模型及其相应结果">训练数值模型及其相应结果</a></li>
+                    <li>
+                        <a href="#%e6%80%bb%e7%bb%93" aria-label="总结">总结</a></li>
+                    <li>
+                        <a href="#reference" aria-label="Reference">Reference</a>
+                    </li>
+                </ul>
+            </div>
+        </details>
+    </div>
+</aside>
+<script>
+    let activeElement;
+    let elements;
+    window.addEventListener('DOMContentLoaded', function (event) {
+        checkTocPosition();
+
+        elements = document.querySelectorAll('h1[id],h2[id],h3[id],h4[id],h5[id],h6[id]');
+         
+         activeElement = elements[0];
+         const id = encodeURI(activeElement.getAttribute('id')).toLowerCase();
+         document.querySelector(`.inner ul li a[href="#${id}"]`).classList.add('active');
+     }, false);
+
+    window.addEventListener('resize', function(event) {
+        checkTocPosition();
+    }, false);
+
+    window.addEventListener('scroll', () => {
+        
+        activeElement = Array.from(elements).find((element) => {
+            if ((getOffsetTop(element) - window.pageYOffset) > 0 && 
+                (getOffsetTop(element) - window.pageYOffset) < window.innerHeight/2) {
+                return element;
+            }
+        }) || activeElement
+
+        elements.forEach(element => {
+             const id = encodeURI(element.getAttribute('id')).toLowerCase();
+             if (element === activeElement){
+                 document.querySelector(`.inner ul li a[href="#${id}"]`).classList.add('active');
+             } else {
+                 document.querySelector(`.inner ul li a[href="#${id}"]`).classList.remove('active');
+             }
+         })
+     }, false);
+
+    const main = parseInt(getComputedStyle(document.body).getPropertyValue('--article-width'), 10);
+    const toc = parseInt(getComputedStyle(document.body).getPropertyValue('--toc-width'), 10);
+    const gap = parseInt(getComputedStyle(document.body).getPropertyValue('--gap'), 10);
+
+    function checkTocPosition() {
+        const width = document.body.scrollWidth;
+
+        if (width - main - (toc * 2) - (gap * 4) > 0) {
+            document.getElementById("toc-container").classList.add("wide");
+        } else {
+            document.getElementById("toc-container").classList.remove("wide");
+        }
+    }
+
+    function getOffsetTop(element) {
+        if (!element.getClientRects().length) {
+            return 0;
+        }
+        let rect = element.getBoundingClientRect();
+        let win = element.ownerDocument.defaultView;
+        return rect.top + win.pageYOffset;   
+    }
+</script>
+  <div class="post-content"><h3 id="rnn介绍">RNN介绍<a hidden class="anchor" aria-hidden="true" href="#rnn介绍">#</a></h3>
+<p>RNN(循环神经网络)是在<strong>自然语言处理</strong>NLP领域中最先被用起来的，比如，RNN可以为<strong>语言模型</strong>来建模. 循环神经网络种类繁多，最简单的基本循环神经网络可以被理解为隐藏层内循环，如下图所示：</p>
+<img src="../pic/2023-01-10-Wave physics as an analog recurrent neural network/fig (1).jpg" style="zoom: 100%; display: block; margin: 0 auto;" width="120px" alt = ""/>
+<p>如果我们把上面的图展开，<strong>循环神经网络</strong>也可以画成下面这个样子：</p>
+<img src="../pic/2023-01-10-Wave physics as an analog recurrent neural network/fig (2).jpg" style="zoom: 100%; display: block; margin: 0 auto;" width="600px" alt = ""/>
+<p>现在看上去就比较清楚了，这个网络在 $t$ 时刻接收到输入 $\mathrm{x}_ {t}$ 之后，隐藏层的值是 $\mathrm{s} _ {t}$ ，输出值是 $\mathrm{o}_ {t}$. 关键一点是， $\mathrm{s}_ {t}$ 的值不仅仅取决于 $\mathrm{x}_ {t}$ , 还取决于 $\mathrm{s}_ {t-1}$ . 我们可以用下面的公式来表示循环神经网络的计算方法:</p>
+<div>
+$$
+\begin{equation}
+    \begin{aligned}
+        & \mathrm{o}_t=g\left(V \mathrm{~s}_t\right)\\
+        & \left.\mathrm{s}_t=f\left(U \mathrm{x}_t+W \mathrm{~s}_{t-1}\right) \right. 
+    \end{aligned} \label{eq1}
+\end{equation}
+$$
+</div>
+<p>输出层是一个全连接层，也就是它的每个节点都和隐 藏层的每个节点相连. $\mathrm{V}$ 是输出层的权重矩阵， $g$ 是激活函数. 隐藏层是循环层. ${U}$ 是输入 $x$ 的权重矩阵， ${W}$ 是上一次的值 $\mathrm{s}_ {t-1}$ 作为这一次的 输入的权重矩阵， $f$是激活函数.</p>
+<p>从 Eq. \eqref{eq1} 中我们可以看出，循环层和全连接层的区别就是循环层多了一个权重矩阵 $W$. 如果反复把隐藏层的计算公式带入到输出层，我们将得到:</p>
+<div>
+$$
+\begin{equation}
+    \begin{aligned}
+    \mathrm{o}_t & =g\left(V \mathrm{~s}_t\right) \\
+    & =V f\left(U \mathrm{x}_t+W \mathrm{~s}_{t-1}\right) \\
+    & =V f\left(U \mathrm{x}_t+W f\left(U \mathrm{x}_{t-1}+W \mathrm{~s}_{t-2}\right)\right) \\
+    & =V f\left(U \mathrm{x}_t+W f\left(U \mathrm{x}_{t-1}+W f\left(U \mathrm{x}_{t-2}+W \mathrm{~s}_{t-3}\right)\right)\right) \\
+    & =V f\left(U \mathrm{x}_t+W f\left(U \mathrm{x}_{t-1}+W f\left(U \mathrm{x}_{t-2}+W f\left(U \mathrm{x}_{t-3}+\ldots\right)\right)\right)\right)
+    \end{aligned}
+\end{equation}
+$$
+</div>
+<p>从上面可以看出，循环神经网络的输出值 $o_t$ ，是受前面历次输入值 $\mathrm{x}_ t , \mathrm{x}_ {t-1} , \mathrm{x}_ {t-2} , \mathrm{x}_ {t-3} , \ldots$ 影响的. 有了以上的讲解，我们将很容易理解论文中的这一部分内容.</p>
+<img src="../pic/2023-01-10-Wave physics as an analog recurrent neural network/fig (1).png" style="zoom: 100%; display: block; margin: 0 auto;" width="800px" alt = ""/>
+<div>
+$$
+\begin{equation}
+    \begin{gathered}
+    \boldsymbol{h}_t=\sigma^{(h)}\left(\boldsymbol{W}^{(h)} \cdot \boldsymbol{h}_{t-1}+\boldsymbol{W}^{(x)} \cdot \boldsymbol{x}_t\right) \\
+    y_t=\sigma^{(y)}\left(\boldsymbol{W}^{(y)} \cdot \boldsymbol{h}_t\right)
+    \end{gathered} \label{eq3}
+\end{equation} 
+$$
+</div>
+<h3 id="引入波动方程与rnn相结合">引入波动方程与RNN相结合<a hidden class="anchor" aria-hidden="true" href="#引入波动方程与rnn相结合">#</a></h3>
+<p>波的标量分布为 $u(x, y, z)$ ，其含时演化过程可以由以下方程进行描述</p>
+<p>$$
+\begin{equation}
+\frac{\partial^2 u}{\partial t^2}-c^2 \cdot \nabla^2 u=f
+\end{equation}
+$$</p>
+<p>其中， $\nabla^2=\frac{\partial^2}{\partial x^2}+\frac{\partial^2}{\partial y^2}+\frac{\partial^2}{\partial z^2}$ 是Laplace算符, $c=c(x, y, z)$ 是空间中的波速且会随空间位置的不同发生变化， $f=f(x, y, z, t)$ 是原函数项. 对 Eq. 4 进行有限差分离散，时间步长为$\Delta t$，得到递归关系方程</p>
+<p>$$
+\frac{u_{t+1}-2 u_t+u_{t-1}}{\Delta t^2}-c^2 \cdot \nabla^2 u_t=f_t
+$$</p>
+<img src="../pic/2023-01-10-Wave physics as an analog recurrent neural network/fig (2).png" style="zoom: 100%; display: block; margin: 0 auto;" width="800px" alt = ""/>
+<p>将以上的差分方程可以转化为</p>
+<div>
+$$
+\begin{equation}
+    \left[\begin{array}{c}
+    u_{t+1} \\
+    u_t
+    \end{array}\right]=\left[\begin{array}{cc}
+    2+\Delta t^2 \cdot c^2 \cdot \nabla^2 & -1 \\
+    1 & 0
+    \end{array}\right] \cdot\left[\begin{array}{c}
+    u_t \\
+    u_{t-1}
+    \end{array}\right]+\Delta t^2 \cdot\left[\begin{array}{c}
+    f_t \\
+    0
+    \end{array}\right]
+\end{equation}
+$$
+</div>
+<p>结合 Eq. \eqref{eq3} 我们很容易会得到相对应的形式</p>
+<div>
+$$
+\begin{equation}
+    \begin{aligned}
+    \boldsymbol{h}_t & =\boldsymbol{A}\left(\boldsymbol{h}_{t-1}\right) \cdot \boldsymbol{h}_{t-1}+\boldsymbol{P}^{(\mathrm{i})} \cdot \boldsymbol{x}_t \\
+    \boldsymbol{y}_t & =\left|\boldsymbol{P}^{(\mathrm{o})} \cdot \boldsymbol{h}_t\right|^2
+    \end{aligned}
+\end{equation}
+$$
+</div>
+<p>方程中 $c=c(x, y, z)$ 部分对应于材料内的物理构型和布局. 与标准RNN类似，隐藏状态与波动方程输入和输出之间的联系由线性算子 $\boldsymbol{P}^{(\mathrm{i})}$ 和 $\boldsymbol{P}^{(\mathrm{o})}$ 定义. 现在我们可以对这两个线性算子进行详细的分析，根据文中作者的说法<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
+<div>
+$$
+\begin{equation}
+    \begin{aligned}
+    \boldsymbol{P}^{(\mathrm{i})} & \equiv\left[\begin{array}{c}
+    \boldsymbol{M}^{(\mathrm{i})} \\
+    \mathbf{o}
+    \end{array}\right] \\
+    \boldsymbol{P}^{(\mathrm{o})} & \equiv\left[\boldsymbol{M}^{(\mathrm{o}) T}, \mathbf{o}\right]
+    \end{aligned}
+\end{equation}
+$$
+</div>
+<p>其中，$\mathrm{o}$ 是零矩阵，相对应的形式在于把输入向量 $\boldsymbol{x}_ t$ 的输入写成矩阵向量的乘法形式：</p>
+<p>$$
+\Delta t^2 \boldsymbol{f}_t\equiv \boldsymbol{M}^{(i)} \cdot \boldsymbol{x}_t
+$$</p>
+<p>特别注意，RNN在每个时间步的输出是由标量场的强度测量给出的，</p>
+<p>$$
+\boldsymbol{y}_ t=\boldsymbol{M}^{(\mathrm{o}) T} \cdot \boldsymbol{u}_t^2
+$$</p>
+<p>以上便是一个简单的例子用来说明RNN与波动方程的联系.</p>
+<h3 id="训练物理系统">训练物理系统<a hidden class="anchor" aria-hidden="true" href="#训练物理系统">#</a></h3>
+<p>该论文中演示了波动方程的动力学如何通过构造非均匀材料分布来训练来分类元音的分类，ae, ei, 和 iy. 图D中的黑色点源即为音源(类比为<strong>输入层</strong>)，通过中间浅色部分(<strong>隐藏层</strong>)传播，右边定义了三个探测点(<strong>输出层</strong>)，每个探测点分配给三个元音类中的一个，对相对应的结果进行反馈. 图C中的线即为三个元音的功率积分结果.</p>
+<p>为了方便数值结果演示，考虑由两种材料组成的二值化系统，归一化后的波速分别为 $c_0=1.0$ 和 $c_1=0.5$. 本文采用了反向优化的传播思路，Adam的方法对材料密度属性进行了优化，其优化结果被展示在下图D之中.</p>
+<img src="../pic/2023-01-10-Wave physics as an analog recurrent neural network/fig (3).png" style="zoom: 100%; display: block; margin: 0 auto;" width="800px" alt = ""/>
+<p>引入一个吸收区域来近似一个对应的边界条件，对应于图B中的灰色区域. 此外，与传统的RNN不同，波动方程施加了能量守恒约束，防止隐态范数和输出信号的无限增长. 该区域由阻尼系数 $b(r, y)$ 定义，带阻尼的标量波动方程可以写为</p>
+<p>$$
+\begin{equation}
+\frac{\partial^2 u}{\partial t^2}+2 b \cdot \frac{\partial u}{\partial t}=c^2 \cdot \nabla^2 u+f
+\end{equation}
+$$</p>
+<p>其中，$u$ 为未知标量字段，$b$ 为阻尼系数. 在数学形式上，该论文对此简化为</p>
+<p>$$
+\begin{equation}
+b(u)=\frac{b_0}{1+(\frac{u}{u_\mathrm{th}})^2}.
+\end{equation}
+$$</p>
+<p>假设 $b$ 可以在空间上变化，但与频率无关. 对于以 $t$ 为索引的时间步长，用<strong>二阶微分的中心差分公式</strong></p>
+<p>$$
+\begin{equation}
+\frac{u_{t+1}-2 u_t+u_{t-1}}{\Delta t^2}+2 b \frac{u_{t+1}-u_{t-1}}{2 \Delta t}=c^2 \nabla^2 u_t+f_t
+\end{equation}
+$$</p>
+<p>现在可以用 $u_{t+1}$ 形成一个递归关系，从而得到</p>
+<div>
+$$
+\begin{equation}
+    \begin{aligned}
+    & \left(\frac{1}{\Delta t^2}+\frac{b}{\Delta t}\right) u_{t+1}-\frac{2}{\Delta t^2} u_t+\left(\frac{1}{\Delta t^2}-\frac{b}{\Delta t}\right) u_{t-1}=c^2 \cdot \nabla^2 u_t+f_t \\
+    & \left(\frac{1}{\Delta t^2}+\frac{b}{\Delta t}\right) u_{t+1}=\frac{2}{\Delta t^2} u_t-\left(\frac{1}{\Delta t^2}-\frac{b}{\Delta t}\right) u_{t-1}+c^2 \cdot \nabla^2 u_t+f_t \\
+    u_{t+1}= & \left(\frac{1}{\Delta t^2}+\frac{b}{\Delta t}\right)^{-1}\left[\frac{2}{\Delta t^2} u_t-\left(\frac{1}{\Delta t^2}-\frac{b}{\Delta t}\right) u_{t-1}+c^2 \cdot \nabla^2 u_t+f_t\right]
+    \end{aligned}
+\end{equation}
+$$
+</div>
+<p>类比常规的波动方程形式，我们可以得到在论文中实际考虑阻尼系数项的形式：</p>
+<div>
+$$
+\begin{equation}
+    \left[\begin{array}{c}
+    u_{t+1} \\
+    u_t
+    \end{array}\right]=\left[\begin{array}{cc}
+    \frac{2+\Delta t^2 \cdot c^2 \cdot \nabla^2}{1+\Delta t \cdot b} & \frac{-1-\Delta t \cdot b}{1+\Delta t \cdot b} \\
+    1 & 0
+    \end{array}\right] \cdot\left[\begin{array}{c}
+    u_t \\
+    u_{t-1}
+    \end{array}\right]+\Delta t^2 \cdot\left[\begin{array}{c}
+    f_t \\
+    0
+    \end{array}\right]
+\end{equation}
+$$
+</div>
+<p>作者在文中提到在数值计算中，对于算符 $\nabla^2$ 的处理采取了离散形式的处理</p>
+<div>
+$$
+\nabla^2 u_t=\frac{1}{h^2}\left[\begin{array}{ccc}
+0 & 1 & 0 \\
+1 & -4 & 1 \\
+0 & 1 & 0
+\end{array}\right] * u_t
+$$
+</div>
+<p>其中，$h$ 为空间网格的步长，同时$*$指的是卷积运算. 之所以采取了这样的一个形式，同样也是采用了二阶微分的近似. 首先引入这个刚刚讲过的二阶微分:</p>
+<p>$$
+\begin{equation}
+\nabla^2 f=\frac{\partial^2 f}{\partial x^2}+\frac{\partial^2 f}{\partial y^2}
+\end{equation}
+$$</p>
+<p>由联系二阶差分的思想:</p>
+<div>
+$$
+\begin{equation}
+    \begin{aligned}
+    & \frac{\partial^2 f}{\partial x^2}=f(x+1)-2f(x)+f(x-1) \\
+    & \frac{\partial^2 f}{\partial y^2}=f(y+1)-2f(y)+f(y-1)
+    \end{aligned}
+\end{equation}
+$$
+</div>
+<p>那么得到上述二阶微分：</p>
+<div>
+$$
+\begin{equation}
+    \begin{aligned}
+    \nabla^2 f &=\frac{\partial^2 f}{\partial x^2}+\frac{\partial^2 f}{\partial y^2}\\
+    &=[f(x+1, y)+f(x-1, y)+f(x, y+1)+f(x, y-1)-4 f(x, y)]
+    \end{aligned}
+\end{equation}
+$$
+</div>
+<p>相对应的系数即为相应的矩阵形式</p>
+<div>
+$$
+\begin{equation}
+    \left[\begin{array}{ccc}
+    0 & 1 & 0 \\
+    1 & -4 & 1 \\
+    0 & 1 & 0
+    \end{array}\right]
+\end{equation}
+$$
+</div>
+<h3 id="训练数值模型及其相应结果">训练数值模型及其相应结果<a hidden class="anchor" aria-hidden="true" href="#训练数值模型及其相应结果">#</a></h3>
+<p>下图计算结果中图A-D代表着不同数据集对应的混淆矩阵. 在基于深度学习的分类识别领域中，经常采用统计学中的混淆矩阵（confusion matrix）来评价<strong>分类器</strong>的性能. 它是一种特定的<strong>二维矩阵</strong>：列代表预测的类别；行代表实际的类别.</p>
+<p>对角线上的值表示预测正确的数量或比例；非对角线元素是预测错误的部分. 混淆矩阵的对角线值越高越好，表明许多正确的预测. 特别是在各<strong>分类数据</strong>的数量不平衡的情况下，混淆矩阵可以直观的显示分类模型对应各个类别的准确率.</p>
+<img src="../pic/2023-01-10-Wave physics as an analog recurrent neural network/fig (4).png" style="zoom: 100%; display: block; margin: 0 auto;" width="800px" alt = ""/>
+<p>该系统相对于训练数据集的平均准确率为 $92.6±1.1%$，测试数据集平均准确率为 $86.3±4.3 %$. 观察到该系统在<code>ae</code>元音上获得了近乎完美的预测性能，并且能够区分<code>iy</code>元音和<code>ei</code>元音，但准确性较低，特别是在来自测试数据集的未见样本中.</p>
+<h3 id="总结">总结<a hidden class="anchor" aria-hidden="true" href="#总结">#</a></h3>
+<p>使用物理来执行计算的方法可能会成为模拟机器学习设备的新平台，相比通过计算机进行机器学习更自然、更有效地执行计算的潜力. 除此之外，这篇论文同样发人深省，在相对应的其它物理系统中仍然可以找到相似对应的结构，例如光学中的傍轴衍射方程和热传导方程，它们与波动方程都有相似的结构.</p>
+<h3 id="reference">Reference<a hidden class="anchor" aria-hidden="true" href="#reference">#</a></h3>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>Hughes, Tyler W., et al. &ldquo;Wave physics as an analog recurrent neural network.&rdquo; Science advances 5.12 (2019): eaay6946.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://wowking2018.github.io/tags/machine-learning/">Machine Learning</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://wowking2018.github.io/posts/2023-07-01-hofstadter-butterfly/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>量子分形世界-Hofstadter蝴蝶</span>
+  </a>
+  <a class="next" href="https://wowking2018.github.io/posts/2021-06-29-memristor/">
+    <span class="title">Next »</span>
+    <br>
+    <span>Memristor - the missing circuit element</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2024 <a href="https://wowking2018.github.io/">Love and Share</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>
