@@ -124,7 +124,7 @@
     "Physics"
   ],
   "articleBody": "从霜花到海岸线，自然界中分形无处不在，近现代物理学中同样不断能够找到分形的影子. 本文回顾了通过类比 Weierstrass 函数，可以从量子气体中寻求到相应的动力学分形. 随后，主要详细讲解了一种有趣的量子分形现象 —Hofstadter蝴蝶. 对于二维晶格的体系，加上对应的磁通，提取系统本征能量后便可以得到这种美丽的分形图案，最后举例了一些最新的相关的研究情况. (P.S. 这篇文章是我的课程设计，再次回看的时候添加了一些新内容，对以前的东西也有了新的理解.)\n引言 借用一句古语——“一花一世界，一树一菩提”，说的是从细微之处洞察宏观的哲学思考，而“一即是全，全即是一”，这是对分形最传神的表达. 每当看到那一张张分形图案时，不免思考这样美丽的图案是如何生成的，“分形”一出现便引起了年幼时我的兴趣. 现如今，随着电脑技术的兴起，分形被广泛运用到复杂图像的产生和处理上，其中包括大量电影里的星球表面，山川起伏的画面.\n1861年，德国数学家魏尔施特拉斯（Karl Theodor Wilhelm Weierstrass, 1815-1897) 发现了一个函数：\n$$ \\begin{equation} f(x)=\\sum_{n=0}^{\\infty} a^{n} \\cos \\left(b^{n} \\pi x\\right) \\end{equation} $$\n其中 $0",
-  "wordCount" : "5050",
+  "wordCount" : "5043",
   "inLanguage": "en",
   "datePublished": "2023-07-01T12:14:32+08:00",
   "dateModified": "2023-07-01T12:14:32+08:00",
@@ -335,7 +335,7 @@ f(x)=\sum_{n=0}^{\infty} a^{n} \cos \left(b^{n} \pi x\right)
 $$</p>
 <p>其中 $0&lt;a&lt;1$，$b$为正奇数，且需要满足 $ab&gt;1+\frac{3}{2}\pi$，这个函数以及它处处连续而又处处不可导的证明首次出现在魏尔施特拉斯于1872年7月18日在普鲁士科学院出版的一篇论文中.</p>
 <p>从现在的数学角度看，毫无疑问这是一条分形曲线，然而“分形”这个概念直到一个世纪之后的1975年才由 Mandelbrot 提出来<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>. 在这里尝试一个简单的画图，Weierstrass函数有无穷项，但是随着 $n \to \infty, a^{n} \cos \left(b^{n} \pi x\right)\to 0$，故可用有限项作为代替进行处理.</p>
-<img src="../pic/2023-07-01-Hofstadter Butterfly/fig1.png" style="zoom: 100%; display: block; margin: 0 auto;" width="500px" alt = "show me something"/>
+<img src="../pic/2023-07-01-Hofstadter Butterfly/fig1.png" style="zoom: 100%; display: block; margin: 0 auto;" width="500px" alt = " "/>
 <div class="highlight"><div style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#727272"> 1
@@ -396,7 +396,7 @@ $$</p>
 $$</p>
 <h4 id="loschmidt-振幅分形图像">Loschmidt 振幅“分形”图像<a hidden class="anchor" aria-hidden="true" href="#loschmidt-振幅分形图像">#</a></h4>
 <p>通过类比的方法，选择初始波函数、测量、维度、适当的能量和时间尺度的要求，便可以用超冷量子气体来实现在时域上表现出分形行为<sup id="fnref1:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>.</p>
-<img src="../pic/2023-07-01-Hofstadter Butterfly/fig2.png" style="zoom: 100%; display: block; margin: 0 auto;" width="500px" alt = "show me something"/>
+<img src="../pic/2023-07-01-Hofstadter Butterfly/fig2.png" style="zoom: 100%; display: block; margin: 0 auto;" width="500px" alt = " "/>
 <p>数值模拟表明，所有这些要求可以很容易地同时满足实际参数在冷原子气体.目前的计算是基于单个粒子图，忽略了粒子间的相互作用.</p>
 <h3 id="霍夫斯塔特蝴蝶hofstadters-butterfly">霍夫斯塔特蝴蝶(Hofstadter&rsquo;s Butterfly)<a hidden class="anchor" aria-hidden="true" href="#霍夫斯塔特蝴蝶hofstadters-butterfly">#</a></h3>
 <p>1976年，Douglas Hofstadter 在研究 Bloch 电子在外磁场作用下的量子现象时发现电子的能量和磁场强度可形成分形图像.</p>
@@ -451,12 +451,12 @@ $$
 \end{equation}
 $$</p>
 <p>然而，1980年德国物理学家 Klaus von Klitzing 发现在极低温、强磁场条件下，二维电子气的霍尔电阻出现了平台化特征，其值等于量子化电阻值 $(h/e^2)$ 的整数倍. 在霍尔电阻表现为量子化平台的同时，纵向电阻则趋于零<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>. 在实际实验研究中，更常采用的是固定二维电子气的密度，在维持流过样品的电流恒定的条件下，测量霍尔电压；随外加磁场的变化，可见在低磁场下霍尔电阻的确与外磁场的磁感应强度成线性关系；但在高磁场区则得到霍尔电阻的平台状结构.</p>
-<img src="../pic/2023-07-01-Hofstadter Butterfly/fig2_1.png" style="zoom: 100%; display: block; margin: 0 auto;" width="500px" alt = "show me something"/>
+<img src="../pic/2023-07-01-Hofstadter Butterfly/fig2_1.png" style="zoom: 100%; display: block; margin: 0 auto;" width="500px" alt = " "/>
 <blockquote>
 <p>横向霍尔电阻的平台结构与纵向电阻的SdH振荡</p>
 </blockquote>
 <p>1976年，Douglas Hofstadter在研究Bloch电子在外磁场作用下的量子现象时发现电子的能量和磁场强度可形成分形图像. 在他的博士论文中研究了晶格里跃迁几率幅为复数的电子行为，这种复跃迁破坏了时间空间反演对称，后续又引出了Chern绝缘体的话题. 如图所示，蝴蝶能谱的整数区域其实就是霍尔电导率的量子化台阶. 正是这种有趣的量子分形现象———Hofstadter蝴蝶.</p>
-<img src="../pic/2023-07-01-Hofstadter Butterfly/fig2_2.png" style="zoom: 100%; display: block; margin: 0 auto;" width="500px" alt = "show me something"/>
+<img src="../pic/2023-07-01-Hofstadter Butterfly/fig2_2.png" style="zoom: 100%; display: block; margin: 0 auto;" width="500px" alt = " "/>
 <blockquote>
 <p>横轴为复跃迁的复角度，纵轴为费米能. 用整数量子标记间隙，用相同颜色的间隙表示具有相同霍尔电导率量子数的量子霍尔态. <sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup></p>
 </blockquote>
@@ -504,7 +504,7 @@ $$</p>
 \end{equation}
 $$</p>
 <p>如果我们把波函数写成$\psi^{\prime}(\vec{r})=e^{-i \frac{e}{\hbar} \int_{r_{0}}^{\vec{r}} \vec{A}\left(\vec{r}^{\prime}\right) d \vec{r}^{\prime}} \psi(\vec{r})$，如果对它做一个空间平移，由于磁场的存在，这样的一个空间平移会给波函数带来一个额外的相位. 然后让每个格子都有一个$\phi$的磁通时，把哈密顿量写成矩阵的形式后就可以直接算本征值，提取系统的本征能量，便可以绘制出Hofstadter蝴蝶.</p>
-<img src="../pic/2023-07-01-Hofstadter Butterfly/fig3_1.png" style="zoom: 100%; display: block; margin: 0 auto;" width="300px" alt = "show me something"/>
+<img src="../pic/2023-07-01-Hofstadter Butterfly/fig3_1.png" style="zoom: 100%; display: block; margin: 0 auto;" width="300px" alt = " "/>
 <blockquote>
 <p><a href="https://phys.org/news/2013-10-teams-cold-atoms-lasers-hofstadter.html">Schematic of the experiments by Aidelsburger et al.</a></p>
 </blockquote>
@@ -596,7 +596,7 @@ $$</p>
 </span></span><span style="display:flex;"><span>ylim([-<span style="color:#ff0;font-weight:bold">4</span>, <span style="color:#ff0;font-weight:bold">4</span>]);
 </span></span></code></pre></td></tr></table>
 </div>
-</div><img src="../pic/2023-07-01-Hofstadter Butterfly/fig3_2.png" style="zoom: 100%; display: block; margin: 0 auto;" width="800px" alt = "show me something"/>
+</div><img src="../pic/2023-07-01-Hofstadter Butterfly/fig3_2.png" style="zoom: 100%; display: block; margin: 0 auto;" width="800px" alt = " "/>
 <blockquote>
 <p>正方形晶格有限截面的能谱数值模拟图：(a)$2×2$网格，(b)$3×3$网格，(c)$4×4$网格，(d)$6×6$网格，(e)$7×7$网格, (f)$10× 10$网格</p>
 </blockquote>
@@ -613,22 +613,22 @@ $$
 <p>对于无限二维方形晶格的紧束缚模型，具有能量色散关系：</p>
 <p>$$
 \begin{equation}
-E(\mathbf{k})=-2|t|\left(\cos \left(k_{x} a\right)+\cos \left(k_{y} a\right)\right) \label{eq_17}
+E(\mathbf{k})=-2|t|\left(\cos \left(k_{x} \alpha \right)+\cos \left(k_{y} \alpha \right)\right) \label{eq_17}
 \end{equation}
 $$</p>
-<p>由于能量范围是 $-4 \lvert t \rvert &lt; E &lt; 4 \lvert t \rvert$，带宽为 $8\lvert t \rvert$，在二维紧束缚带的底部附近由Eq. $\eqref{eq_17}$描述，能量近似为类自由电子，约化质量为<sup id="fnref:7"><a href="#fn:7" class="footnote-ref" role="doc-noteref">7</a></sup>：</p>
+<p>由于能量范围是 $-4 \lvert t \rvert &lt; E &lt; 4 \lvert t \rvert$，带宽为 $8\lvert t \rvert$，在二维紧束缚带的底部附近由Eq. $\eqref{eq_17}$ 描述，能量近似为类自由电子，约化质量为<sup id="fnref:7"><a href="#fn:7" class="footnote-ref" role="doc-noteref">7</a></sup>：</p>
 <p>$$
 \begin{equation}
 E(\mathbf{k}) \approx-4|t|+\frac{\hbar^{2}}{2 m^{*}}\left(k_{x}^{2}+k_{y}^{2}\right)
 \end{equation}
 $$</p>
-<p>其中，有效质量为 $m^{\ast}=\hbar^{2} /\left(2 \lvert t \rvert a^{2}\right)$，回旋频率可以写为 $\omega_{c}=\frac{e B}{m^{\ast}}=\frac{4 \pi \alpha \lvert t \rvert}{\hbar}$，因此，靠近谱带底部的朗道能级可以写成</p>
+<p>其中，有效质量为 $m^{\ast}=\hbar^{2} /\left(2 \lvert t \rvert \alpha^{2}\right)$，回旋频率可以写为 $\omega_{c}=\frac{e B}{m^{\ast}}=\frac{4 \pi \alpha \lvert t \rvert}{\hbar}$，因此，靠近谱带底部的朗道能级可以写成</p>
 <p>$$
 \begin{equation}
 \frac{E}{|t|}=-4+4 \pi \alpha\left(n+\frac{1}{2}\right) \label{eq_19}
 \end{equation}
 $$</p>
-<img src="../pic/2023-07-01-Hofstadter Butterfly/fig3_3.png" style="zoom: 100%; display: block; margin: 0 auto;" width="800px" alt = "show me something"/>
+<img src="../pic/2023-07-01-Hofstadter Butterfly/fig3_3.png" style="zoom: 100%; display: block; margin: 0 auto;" width="800px" alt = " "/>
 <blockquote>
 <p>(a)$10× 10$方阵区的能谱;(b)朗道扇形能谱. 对于半满带的情况，化学势$\mu$设为零.</p>
 </blockquote>
@@ -645,12 +645,12 @@ $$</p>
 <p>(a)散射体周期性排列的透射光谱，图中上部是通过反射得到的可以看到前两个Bloch带，显示了Hofstadter蝴蝶的两个部分. (其中黑色和白色分别对应高透射率和低透射率); (b)四个Bloch纹，隐约可以看见每一个中的Hofstadter能谱.</p>
 </blockquote>
 <p>2017年9月，Google的John Martinis小组与CQT的Angelakis 小组合作发表了使用9个超导量子比特的相互作用光子，去模拟磁场中电子的2维结果<sup id="fnref:9"><a href="#fn:9" class="footnote-ref" role="doc-noteref">9</a></sup>，复现出了Hofstadter蝴蝶.</p>
-<img src="../pic/2023-07-01-Hofstadter Butterfly/fig4_2.png" style="zoom: 100%; display: block; margin: 0 auto;" width="800px" alt = "show me something"/>
+<img src="../pic/2023-07-01-Hofstadter Butterfly/fig4_2.png" style="zoom: 100%; display: block; margin: 0 auto;" width="800px" alt = " "/>
 <blockquote>
 <p>(a)在无量纲磁场 $b$ 的 $100$ 个取值范围为 $0-1$ 时，恢复了Hofstadter蝴蝶；(b)对于每个 $b$ 值，识别出 $9$ 个峰，并将它们的位置绘制为一系列彩点，点的颜色是测量特征值与数值计算特征值之差的绝对值.</p>
 </blockquote>
 <p>2020年，有研究小组报告了在六方氮化硼基底上制造的石墨烯器件中存在霍夫施塔特蝴蝶光谱的证据<sup id="fnref:10"><a href="#fn:10" class="footnote-ref" role="doc-noteref">10</a></sup>. 在石墨烯晶格与氮化硼接近零角度，由外加磁场和大规模 moiré 结构之间的相互作用产生了蝴蝶型光谱.</p>
-<img src="../pic/2023-07-01-Hofstadter Butterfly/fig4_3.png" style="zoom: 100%; display: block; margin: 0 auto;" width="500px" alt = "show me something"/>
+<img src="../pic/2023-07-01-Hofstadter Butterfly/fig4_3.png" style="zoom: 100%; display: block; margin: 0 auto;" width="500px" alt = " "/>
 <h3 id="结语">结语<a hidden class="anchor" aria-hidden="true" href="#结语">#</a></h3>
 <p>从霜花到海岸线，自然界中分形无处不在，近现代物理学中同样不断能够找到分形的影子. 这一种有趣的量子分形现象——Hofstadter蝴蝶，从它与整数量子霍尔效应的联系出发，最近火热的转角石墨烯体系、分数陈绝缘体等与其相关密切. 从现在的眼光来看，Hofstadter&rsquo;s Butterfly本身就是朗道能级的二维格点版本. 本文也讨论了对于二维晶格的体系，加上对应的磁通，提取系统本征能量后便可以得到一个美丽的分形图案. 但若要在实验上得以实现，需要极大的磁通，最后也举例了最新的实验观测情况. 实际上，Hofstadter蝴蝶中与之相关的物理现象有很多，例如分数量子霍尔效应也与之有重要的联系.</p>
 <h3 id="reference">Reference<a hidden class="anchor" aria-hidden="true" href="#reference">#</a></h3>

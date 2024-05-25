@@ -17,16 +17,21 @@
       <content:encoded><![CDATA[<h3 id="绪论">绪论</h3>
 <p>1971 年，美国加州大学伯克利分校的科学家蔡少棠教授（Prof. Leon Chua）提出了忆阻器（Memristor）的概念. 从统计学的角度和完备性的概念，推断忆阻器的存在.</p>
 <p>电路方程中的基本变量有四个，即电压 $V$ 、电流 $I$ 、电荷 $q$ 与磁通量 $\varphi$，四个变量对应六种关系，若将磁通量与电荷的关系定义为 ${\rm{d}}\varphi=M{\rm{d}}q$ （其中 $M$ 为忆阻器阻值，$\varphi$ 为电荷通量，$q$ 为电荷量），这便是第四个基本电路元件：记忆电阻器.</p>
-<img src="../pic/2021-06-29-Memristor/fig1.png" style="zoom: 100%; display: block; margin: 0 auto;" width="500px" alt = "show me something"/>
+<img src="../pic/2021-06-29-Memristor/fig1.png" style="zoom: 100%; display: block; margin: 0 auto;" width="500px" alt = ""/>
 <h3 id="数学模型">数学模型</h3>
 <p>忆阻器模型根据电流电压特性分为理想忆阻器模型和实际忆阻器模型，惠普忆阻器是目前应用最普遍的理想忆阻器模型，惠普忆阻器的数学模型如公式所示</p>
-<p>$$
+<div>
+$$
 \begin{equation}
-v(t)=\left(\mathcal{R}_  {\text {on }} \frac{w(t)}{D}+\mathcal{R}_  {\text {off }}\left(1-\frac{w(t)}{D}\right)\right) i(t) \rightarrow M(t)=\mathcal{R}_ {\text{off }}+\left(\mathcal{R}_  {\text {on }}-\mathcal{R}_  {\text {off }}\right) \frac{w(t)}{D}
+    \begin{aligned}
+    &v(t) =\left(\mathcal{R}_  {\text {on }} \frac{w(t)}{D}+\mathcal{R}_  {\text {off }}\left(1-\frac{w(t)}{D}\right)\right) i(t) \\
+    &M(t) =\mathcal{R}_ {\text{off }}+\left(\mathcal{R}_  {\text {on }}-\mathcal{R}_  {\text {off }}\right) \frac{w(t)}{D}
+     \end{aligned}
 \end{equation}
-$$</p>
+$$
+</div>
 <p>其中 $M(t)$ 为忆阻值， $\mathcal{R}_  {\text {on}}$ 和 $\mathcal{R}_  {\text{off}}$ 是忆阻器电阻的极限值， $w(t)$ 是含有氧原子空位的 $\rm{TiO}_  {2-\mathrm{x}}$ 厚度变化 率， $D$ 是薄膜的厚度， $\mathcal{R}_  {\text{on}}$ 是当 $\mathrm{TiO}_  {2-x}$ 厚度达到最大值，即 $w(t)=D$ 时忆阻器的阻值， $\mathcal{R}_  {\text {off }}$ 是当 $\mathrm{TiO}_  {2-\mathrm{x}}$厚度达到最小值，即 $w(t)=0$ 时忆阻器的阻值.</p>
-<img src="../pic/2021-06-29-Memristor/fig2.jpg" style="zoom: 100%; display: block; margin: 0 auto;" width="500px" alt = "show me something"/>
+<img src="../pic/2021-06-29-Memristor/fig2.jpg" style="zoom: 100%; display: block; margin: 0 auto;" width="500px" alt = ""/>
 <p>对于忆阻器模型有</p>
 <p>$$
 \begin{equation}
@@ -86,11 +91,11 @@ $$
 \end{aligned}
 $$
 </div>
-<img src="../pic/2021-06-29-Memristor/fig3_a.jpg" style="zoom: 100%; display: block; margin: 0 auto;" width="500px" alt = "show me something"/>
-<img src="../pic/2021-06-29-Memristor/fig4_a.jpg" style="zoom: 100%; display: block; margin: 0 auto;" width="500px" alt = "show me something"/>
+<img src="../pic/2021-06-29-Memristor/fig3_a.jpg" style="zoom: 100%; display: block; margin: 0 auto;" width="500px" alt = ""/>
+<img src="../pic/2021-06-29-Memristor/fig4_a.jpg" style="zoom: 100%; display: block; margin: 0 auto;" width="500px" alt = ""/>
 <p>如果施加正余弦性的电压幅值情况，那么将会形成3个对应的loop响应。</p>
-<img src="../pic/2021-06-29-Memristor/fig3_b.jpg" style="zoom: 100%; display: block; margin: 0 auto;" width="500px" alt = "show me something"/>
-<img src="../pic/2021-06-29-Memristor/fig4_b.jpg" style="zoom: 100%; display: block; margin: 0 auto;" width="500px" alt = "show me something"/>
+<img src="../pic/2021-06-29-Memristor/fig3_b.jpg" style="zoom: 100%; display: block; margin: 0 auto;" width="500px" alt = ""/>
+<img src="../pic/2021-06-29-Memristor/fig4_b.jpg" style="zoom: 100%; display: block; margin: 0 auto;" width="500px" alt = ""/>
 ]]></content:encoded>
     </item>
   </channel>
