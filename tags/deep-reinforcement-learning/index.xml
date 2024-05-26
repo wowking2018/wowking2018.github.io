@@ -29,7 +29,7 @@
 <li>$\mathbf{o}_{t}$ - observation</li>
 <li>$\mathbf{a}_{t}$ - action</li>
 <li>$\pi _{\theta}({\mathbf{a} _{t}} | \mathbf{o} _{t})$ - policy (partially observed) - Instead, it receives an observation $\mathbf{o} _{t}$, which might be a partial or noisy view of the true state. This policy defines the probability of agent taking action $\mathbf{a} _{t}$ at​ the given observation.</li>
-<li>$\pi _{\theta}({\mathbf{a} _{t}} | \mathbf{s} _{t})$ - policy (fully observed) - In a fully observed environment, the agent has access to complete state $\mathbf{s} _{t}$ of environment. The policy $\pi _{\theta}(\mathbf{a} _t \mid \mathbf{s} _t)$ defines the probability of agent taking action $\mathbf{a}_t$.</li>
+<li>$\pi _{\theta}({\mathbf{a} _{t}} | \mathbf{s} _{t})$ - policy (fully observed) - In a fully observed environment, the agent has access to complete state $\mathbf{s} _{t}$ of environment. The policy $\pi _{\theta}(\mathbf{a} _t | \mathbf{s} _t)$ defines the probability of agent taking action $\mathbf{a}_t$.</li>
 </ul>
 <p>Among all of them, important definitions to know are the state which we denote $\mathbf{s}_{t}$, the observation $\mathbf{o} _{t}$ and the action $\mathbf{a} _{t}$. Then, the observation and state could be related to one another by the following graphical model where the edge between observations and actions is policy, and state satisfies the Markov property.</p>
 <p><figure>
@@ -111,14 +111,18 @@ $$
 \end{equation}
 $$
 We would like to find the paraments $\theta$, which is our goal. By doing this, we aim to maxmize the expected value of the sum of rewards over the trajectory. 
-<p>Generally, $\pi_{\theta}(\mathbf{a}<em>{t}|\mathbf{\mathbf{s}</em>{t}})$ given $\mathbf{s}_{t}$ allows us to get a distribution of our actions condition on states. What we can do is to group state and action together into a kind of augmented state. And now the augments states actually form a Markov chain as the following figure. We could write down the enhanced transition operator (personal nick name for this operator) in this augmented Markov chain.</p>
+<p>Generally, $\pi_{\theta}(\mathbf{a} _{t}|\mathbf{\mathbf{s} _{t}})$ given $\mathbf{s} _{t}$ allows us to get a distribution of our actions condition on states. What we can do is to group state and action together into a kind of augmented state. And now the augments states actually form a Markov chain as the following figure. We could write down the enhanced transition operator (personal nick name for this operator) in this augmented Markov chain.</p>
 <div>
 $$
 	p((\mathbf{s}_{t+1},\mathbf{a}_{t+1})|(\mathbf{s}_{t},\mathbf{a}_{t})) = p(\mathbf{s}_{t+1}|\mathbf{s}_{t},\mathbf{a}_{t})\pi_{\theta}(\mathbf{a}_{t+1},\mathbf{s}_{t+1})
 $$
 </div>
-![]( Fig_5.png)
-<p>Next we could do is to write the objective by linearity of expectation as the sum over time of the expected values under the state action marginal $p_{\theta}(\mathbf{s}<em>{t}, \mathbf{a}</em>{t})$ in this Markov chain, cause this transition operator is product of transition and policy with good linear mathematical structure.</p>
+<p><figure>
+    <img loading="lazy" src="Fig_5.png" alt=""  />
+    
+    </figure>
+    </p>
+<p>Next we could do is to write the objective by linearity of expectation as the sum over time of the expected values under the state action marginal $p_{\theta}(\mathbf{s} _{t}, \mathbf{a} _{t})$ in this Markov chain, cause this transition operator is product of transition and policy with good linear mathematical structure.</p>
 <div>
 $$
 \begin{equation}
