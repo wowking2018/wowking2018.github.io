@@ -104,7 +104,7 @@ $$
 \end{equation} 
 $$
 </div>
-For now we **assume that our control problem has a finite horizon**, implying that the decision-making task is limited to a fixed time step $T$ and then ends. We could factorize it by using the chain rule in terms of probability distribution that we've already defined. For notational brevity, sometimes $p_{\theta}(\mathbf{s}_{1},\mathbf{a}_{1}, \cdots, \mathbf{s}_{T}, \mathbf{a}_{T} )$ will be rewritten by $p_{\theta}(\tau)$. Having define the distribution, we could actually define an objective as an expected value under the trajectory distribution for reinforcement learning tasks. (P.S. this equation could be used in finite horizon situation)
+For now we assume that our control problem has a finite horizon, implying that the decision-making task is limited to a fixed time step $T$ and then ends. We could factorize it by using the chain rule in terms of probability distribution that we've already defined. For notational brevity, sometimes $p_{\theta}(\mathbf{s}_{1},\mathbf{a}_{1}, \cdots, \mathbf{s}_{T}, \mathbf{a}_{T} )$ will be rewritten by $p_{\theta}(\tau)$. Having define the distribution, we could actually define an objective as an expected value under the trajectory distribution for reinforcement learning tasks. (P.S. this equation could be used in finite horizon situation)
 $$
 \begin{equation}
 	\theta^{*} = \arg \max_{\theta} E_{\tau \sim p_{\theta}(\tau)}  \left[ \sum_{t}r(\mathbf{s}_{t},\mathbf{a}_{t}) \right] 
@@ -136,7 +136,7 @@ This formulation simplifies the computation by focusing solely on the expectatio
 <blockquote>
 <p>First, if that happens our objective might become not so clear. Please imagine that you have a sum of infinite positive numbers rewards, which is infinity. We need to make the objective finite, using discount will solve this problem，or choose a mathematical operation divide by $T$ so that the sum of the expectations of the marginals becomes dominated by the stationary distribution terms.</p>
 </blockquote>
-<p>Now, we could ask a more specific question, does $p(\mathbf{s}<em>{t},\mathbf{a}</em>{t})$ converge to a stationary distribution?</p>
+<p>Now, we could ask a more specific question, does $p(\mathbf{s} _{t},\mathbf{a} _{t})$ converge to a stationary distribution?</p>
 <blockquote>
 <p>If this is possible, that means we could write the stationary distribution and it must obey this equation, $\mu=\mathcal{T}\mu$. We could prove this conclusion under a few technical assumptions namely ergoicity and chain being aperiodic. Ergoicity means every state can be reached from every other state with non-zero probability, it prevents a situation where if you start in one part of the MDP, you might never reach another one. It dives us into characteristic equation in linear algebra to solve</p>
 <div>$$(\mathcal{T}-\mathbf{I})\mu=0$$</div>
