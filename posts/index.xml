@@ -19,11 +19,7 @@
 <h3 id="definition-of-deep-reinforcement-learning">Definition of Deep Reinforcement Learning</h3>
 <h4 id="something-about-definitions--notation">Something about definitions &amp; notation</h4>
 <p>Here, I recommend this textbook named <a href="https://github.com/MathFoundationRL/Book-Mathematical-Foundation-of-Reinforcement-Learning"><em>Mathematical foundation of reinforcement learning</em></a> for studying the fundamental concepts related to classical reinforcement learning.</p>
-<p><figure>
-    <img loading="lazy" src="Fig_1.png" alt=""  />
-    
-    </figure>
-    </p>
+<img src="./Fig_1.png" style="zoom: 100%; display: block; margin: 0 auto;" width="500px"/>
 <ul>
 <li>$\mathbf{s}_{t}$ - state</li>
 <li>$\mathbf{o}_{t}$ - observation</li>
@@ -32,11 +28,7 @@
 <li>$\pi _{\theta}({\mathbf{a} _{t}} | \mathbf{s} _{t})$ - policy (fully observed) - In a fully observed environment, the agent has access to complete state $\mathbf{s} _{t}$ of environment. The policy $\pi _{\theta}(\mathbf{a} _t | \mathbf{s} _t)$ defines the probability of agent taking action $\mathbf{a}_t$.</li>
 </ul>
 <p>Among all of them, important definitions to know are the state which we denote $\mathbf{s}_{t}$, the observation $\mathbf{o} _{t}$ and the action $\mathbf{a} _{t}$. Then, the observation and state could be related to one another by the following graphical model where the edge between observations and actions is policy, and state satisfies the Markov property.</p>
-<p><figure>
-    <img loading="lazy" src="Fig_3.png" alt=""  />
-    
-    </figure>
-    </p>
+<img src="./Fig_2.png" style="zoom: 100%; display: block; margin: 0 auto;" width="500px"/>
 <p>We&rsquo;ll start with something called Markov chain, which is named after <em>Andrei Markov</em> who was a mathematician pioneered the study of stochastic processes. The Markov chain has a very simple definition，it consists of just two things, a set of states s and a transition function, which means that the state at time $t+1$ is independent of the state at time $t-1$, one condition on the current state $\mathbf{s}_{t}$.</p>
 <p>Markov chain:</p>
 <ul>
@@ -44,18 +36,14 @@
 <li>$\mathcal{S}$ - state space, state $s \in \mathcal{S}$ (discrete or continuous)</li>
 <li>$\mathcal{T}$ - transition operator $p(s_{t+1}|s_{t})$, a sort of linear operator, it can also be referred to as a transition probability or a dynamics function.</li>
 </ul>
-<p><figure>
-    <img loading="lazy" src="Fig_2.png" alt=""  />
-    
-    </figure>
-    </p>
+<img src="./Fig_3.png" style="zoom: 100%; display: block; margin: 0 auto;" width="500px"/>
 <p>It sounds like a little weird, why is it refferred to an operator?</p>
 <blockquote>
 <p>Answer: This operator emphasizes how the Markov chain&rsquo;s dynamics are governed: it takes the current distribution of states and produces the next distribution, much like how a function or matrix transforms inputs to outputs in mathematics. It will help us capture the essence of how states evolve over time in the Markov process.</p>
 </blockquote>
 <blockquote>
 <p>If we represent the probabilities of each state at time step $t$ as a vector, we could call it $\mu_{t,i}=p(s_{t}=i)$. Let&rsquo;s say we have $n$ states, each with its own probability distribution represented by a probability vector $\vec{\mu _{t}}$, where $t$ represents the time step. Then, the transition probabilities as a matrix, where the $ij$-th entry is the probability of going into state $i$ if you are currently in the state $j$, the corresponding formula is
-$\mathcal{T} _{i,j}= p(s _{t+1} = i | s _{t}=j)$. Now, we could express the vector of state probabilities at the next time step $\vec{\mu} _{t+1} = \mathcal{T}\vec{\mu} _{t}$.</p>
+$\mathcal{T} _{i,j}= p(s _{t+1} = i | s _{t}=j)$. Now, we could express the vector of state probabilities at the next time step $\vec{\mu _{t+1}} = \mathcal{T}\vec{\mu _{t}}$.</p>
 </blockquote>
 <p>However, the Markov chain itself doesn&rsquo;t allow us to specify a decision, as it lacks the notion of actions. In order to go towards the notion of actions, we have to turn the Markov chain into a Markov decision process (MDP).</p>
 <p>Markov decision process:</p>
@@ -64,13 +52,9 @@ $\mathcal{T} _{i,j}= p(s _{t+1} = i | s _{t}=j)$. Now, we could express the vect
 <li>$\mathcal{S}$ - state space, state $s \in \mathcal{S}$ (discrete or continuous)</li>
 <li>$\mathcal{A}$ - action space, actions $a \in \mathcal{A}$ (discrete or continuous)</li>
 <li>$\mathcal{T}$ - transition operator, it&rsquo;s not a matrix any more, but a tensor! Because it includes next state, current state, and current action.</li>
-<li>$r$ - reward function, $r: \mathcal{S}\times \mathcal{A} ={(s,a)| s \in \mathcal{S}, a \in \mathcal{A}} \rightarrow \mathbb{R}$, the reward function is a mapping from the <em>Cartesian</em> product of the state and action space into real valued numbers.</li>
+<li>$r$ - reward function, $r: \mathcal{S}\times \mathcal{A} = \lbrace (s,a)| s \in \mathcal{S}, a \in \mathcal{A} \rbrace \rightarrow \mathbb{R}$, the reward function is a mapping from the <em>Cartesian</em> product of the state and action space into real valued numbers.</li>
 </ul>
-<p><figure>
-    <img loading="lazy" src="Fig_6.png" alt=""  />
-    
-    </figure>
-    </p>
+<img src="./Fig_4.png" style="zoom: 100%; display: block; margin: 0 auto;" width="400px"/>
 <p>Some useful tricks we mentioned earlier can still be applied here, let $\mu_{t,j} = p(s_{t}=j)$, and we could have another vector $\xi_{t,k}=p(a_{t}=k)$ that will denote the probability of taking some action. Also, transition operator could be written as a tensor, so $\mathcal{T} _{i,j,k}= p(s _{t+1}=i | s _{t}=j,a _{t}=k)$ is the probability of entering state $i$ if you&rsquo;re in state $j$ and take action $k$. The vector of state probabilities at the next time step will be a little bit complex,</p>
 <div>
 $$
@@ -87,15 +71,11 @@ $$
 <li>$\mathcal{O}$ - observation space, observations $o \in \mathcal{O}$ (discrete or continuous)</li>
 <li>$\mathcal{T}$ - transition operator, a tensor!</li>
 <li>$\mathcal{E}$ - emission probability $p(o_{t}|s_{t})$</li>
-<li>$r$ - reward function, $r: \mathcal{S}\times \mathcal{A} ={(s,a)| s \in \mathcal{S}, a \in \mathcal{A}} \rightarrow \mathbb{R}$</li>
+<li>$r$ - reward function, $r: \mathcal{S}\times \mathcal{A} =\lbrace (s,a)| s \in \mathcal{S}, a \in \mathcal{A}\rbrace \rightarrow \mathbb{R}$</li>
 </ul>
 <h4 id="goal-of-reinforcement-learning">Goal of reinforcement learning</h4>
 <p>We will talk about partially observed later, for now let&rsquo;s just say our policy is conditioned on $s$, and $\theta$ corresponds to the parameters of the policy. If policy is a kind of neural network, we could find that $\theta$ denotes the parameters of this deep neural net. The state input policy and action go into the transition probability $p(\mathbf{s}^{\prime}|\mathbf{s}, \mathbf{a})$, which produces the next state.</p>
-<p><figure>
-    <img loading="lazy" src="Fig_4.png" alt=""  />
-    
-    </figure>
-    </p>
+<img src="./Fig_5.png" style="zoom: 100%; display: block; margin: 0 auto;" width="550px"/>
 <p>In this process, we could write down a probability distribution over trajectories, which are sequences of states and actions by using chain rules.</p>
 <div>
 $$
@@ -117,11 +97,7 @@ $$
 	p((\mathbf{s}_{t+1},\mathbf{a}_{t+1})|(\mathbf{s}_{t},\mathbf{a}_{t})) = p(\mathbf{s}_{t+1}|\mathbf{s}_{t},\mathbf{a}_{t})\pi_{\theta}(\mathbf{a}_{t+1},\mathbf{s}_{t+1})
 $$
 </div>
-<p><figure>
-    <img loading="lazy" src="Fig_5.png" alt=""  />
-    
-    </figure>
-    </p>
+<img src="./Fig_6.png" style="zoom: 100%; display: block; margin: 0 auto;" width="400px"/>
 <p>Next we could do is to write the objective by linearity of expectation as the sum over time of the expected values under the state action marginal $p_{\theta}(\mathbf{s} _{t}, \mathbf{a} _{t})$ in this Markov chain, cause this transition operator is product of transition and policy with good linear mathematical structure.</p>
 <div>
 $$
@@ -142,8 +118,6 @@ This formulation simplifies the computation by focusing solely on the expectatio
 <div>$$(\mathcal{T}-\mathbf{I})\mu=0$$</div>
 We could find $\mu$ by finding the eigenvector with eigenvalue one for the matrix defined by $t$. And $\mu$ is eigenvector of $\mathcal{T}$ with eigenvalue $1$, it always exists under ergodic and aperiodic assumption.
 </blockquote>
-<p>Sure! Here&rsquo;s a clearer and more concise explanation of the part:</p>
-<hr>
 <p>When we consider the average reward case divided by $T$, the limit as $t$ approaches infinity will be the expected value of the reward. Formally, this is expressed as</p>
 <div>
 $$
