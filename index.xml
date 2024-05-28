@@ -745,7 +745,7 @@ $$</p>
 <img src="../pic/2023-07-01-Hofstadter Butterfly/fig4_3.png" style="zoom: 100%; display: block; margin: 0 auto;" width="500px" alt = " "/>
 <h3 id="结语">结语</h3>
 <p>从霜花到海岸线，自然界中分形无处不在，近现代物理学中同样不断能够找到分形的影子. 这一种有趣的量子分形现象——Hofstadter蝴蝶，从它与整数量子霍尔效应的联系出发，最近火热的转角石墨烯体系、分数陈绝缘体等与其相关密切. 从现在的眼光来看，Hofstadter&rsquo;s Butterfly本身就是朗道能级的二维格点版本. 本文也讨论了对于二维晶格的体系，加上对应的磁通，提取系统本征能量后便可以得到一个美丽的分形图案. 但若要在实验上得以实现，需要极大的磁通，最后也举例了最新的实验观测情况. 实际上，Hofstadter蝴蝶中与之相关的物理现象有很多，例如分数量子霍尔效应也与之有重要的联系.</p>
-<h3 id="reference">Reference</h3>
+<h3 id="references">References</h3>
 <div class="footnotes" role="doc-endnotes">
 <hr>
 <ol>
@@ -1015,6 +1015,100 @@ $$
 <ol>
 <li id="fn:1">
 <p>Hughes, Tyler W., et al. &ldquo;Wave physics as an analog recurrent neural network.&rdquo; Science advances 5.12 (2019): eaay6946.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>What is entropy?</title>
+      <link>https://wowking2018.github.io/posts/2022-06-19-what-is-entropy/</link>
+      <pubDate>Wed, 29 Jun 2022 14:39:53 +0800</pubDate>
+      <guid>https://wowking2018.github.io/posts/2022-06-19-what-is-entropy/</guid>
+      <description>Introduction When it comes to deep learning, it is no doubt to encounter a concept called information entropy 1. My friend asked a question for me—So, what is entropy? In physics, entropy is a concept that shows quotient of an infinitesimal amount of heat to the instantaneous temperature 2. Austrian physicist Boltzmann explained entropy as the degree of disorder or randomness in a system.
+Mathematical derivation In this blog, I will show a kind of method presented by Frederick in his classical book Fundamentals of statistical and thermal physics.</description>
+      <content:encoded><![CDATA[<h3 id="introduction">Introduction</h3>
+<p>When it comes to deep learning, it is no doubt to encounter a concept called <strong>information entropy</strong> <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>. My friend asked a question for me—So, what is entropy? In physics, entropy is a concept that shows quotient of an infinitesimal amount of heat to the instantaneous temperature <sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>. Austrian physicist <em>Boltzmann</em> explained entropy as the degree of disorder or randomness in a system.</p>
+<h3 id="mathematical-derivation">Mathematical derivation</h3>
+<p>In this blog, I will show a kind of method presented by <em>Frederick</em> in his classical book <em>Fundamentals of statistical and thermal physics</em>. Clearly and step by step:</p>
+<p>Imagine two thermal internal interaction between two macroscopic systems $A$ and $A^{\prime}$, we shall denote the respective energies of these systems by $E$ and $E^{\prime}$. Moreover, the combined system $A^{(0)} \equiv A + A^{\prime}$ is isolated and its total energy $E^{(0)}$ is therefore constant <sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>.</p>
+<img src="./Fig_1.png" style="zoom: 100%; display: block; margin: 0 auto;" width="400px"/>
+<p>It follows that the the probability $P(E)$ of finding this combineed system in a configuration where $A$ has an energy is simply proportional to the number of states $\Omega^{(0)}(E)$. This probability could also be written as</p>
+<p>$$
+\begin{equation}
+P(E) = \frac{\Omega ^{(0)}(E)}{\Omega_{\text{tot}}},
+\end{equation}
+$$</p>
+<p>where $\Omega ^{(0)}_ {\textrm{tot}}$ denotes the total number of states accessible to $A^{(0)}$. $\Omega ^{(0)}_ {\textrm{tot}}$ can be obtained by summing $\Omega^{(0)}(E)$ over all possible energies $E$ of the system $A$, which means $\Omega ^{(0)}_{\text{tot}}$ is constant. In symbols this can be written as</p>
+<p>$$
+\begin{equation}
+P(E) = C \Omega^{(0)}(E),
+\end{equation}\label{eq2}
+$$</p>
+<p>where $C$ is a constant of proportionality independent of $E$. Indeed, suppose that $A$ has an energy $E$, and $A^{\prime}$ has the corresponding energy known as to be $E^{\prime} = E^{(0)}-E$. In Eq. \eqref{eq2}, $\Omega^{(0)}(E)$ is simply given by the product</p>
+<p>$$
+\begin{equation}
+\Omega^{(0)}(E)=\Omega(E) \Omega^{\prime}\left(E^{(0)}-E\right).
+\end{equation}
+$$</p>
+<p>Correspondingly, system $A$ having an energy near $E$ is simply given by</p>
+<p>$$
+\begin{equation}
+P(E)=C \Omega(E) \Omega^{\prime}\left(E^{(0)}-E\right).
+\end{equation}
+$$</p>
+<p>To locate the position of the maximum of $P(E)$, we need to find the value when</p>
+<p>$$
+\begin{equation}
+\frac{\partial \ln P}{\partial E}=0,
+\end{equation} \label{eq5}
+$$</p>
+<p>where</p>
+<p>$$
+\ln P(E)=\ln C+\ln \Omega(E)+\ln \Omega^{\prime}\left(E^{\prime}\right).
+$$</p>
+<p>As what we have said before, $E^{\prime}=E^{(0)}-E$. Hence, Eq. \eqref{eq5} becomes</p>
+<p>$$
+\begin{equation}
+\frac{\partial \ln \Omega(E)}{\partial E} - \frac{\partial \ln \Omega^{\prime}\left(E^{\prime}\right)}{\partial E^{\prime}}=0,
+\end{equation}
+$$</p>
+<p>where we have to introduced the definition</p>
+<p>$$
+\begin{equation}
+\beta(E) \equiv \frac{\partial \ln \Omega}{\partial E}.
+\end{equation}
+$$</p>
+<p>Then we get $\beta(\tilde{E}) = \beta^{\prime}(\tilde{E}^{\prime})$, where $\tilde{E}$ and $\tilde{E}^{\prime}$ denote the corresponding energies of $A$ and $A^{\prime}$ at the maximum, By its definition, the parameter $\beta$ has the dimensions of a reciprocal energy. It is convenient to introduce a dimensionless parameter $T$ defined by writing $\beta = (k T)^{-1}$, where $k$ is some positive sonstant having the dimensions of energy.</p>
+<p>Let me explain that why is $\beta = (k T)^{-1}$? Like what we have learnt in thermodynamics,</p>
+<blockquote>
+<p>entropy is a concept that shows quotient of an infinitesimal amount of heat to the instantaneous temperature.</p>
+</blockquote>
+<p>The corresponding connection can be shown like this</p>
+<p>$$
+\begin{equation}
+\frac{1}{T} = \frac{\partial S}{\partial E}, <br>
+\end{equation}\label{eq8}
+$$</p>
+<p>we usually use this definition $S \equiv k \ln \Omega$, combine it with Eq. \eqref{eq8}, we get</p>
+<p>$$
+\begin{equation}
+\frac{1}{T} = \frac{k \partial \Omega}{\partial E} \rightarrow \frac{1}{kT} \equiv \beta \equiv \frac{\partial \ln \Omega}{\partial E}. <br>
+\end{equation} <br>
+$$</p>
+<p>The truth is that when entropy of two subsystems reaches the maximum value of the state is the most likely state for both systems.</p>
+<h3 id="reference">Reference</h3>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>Shannon, Claude Elwood. &ldquo;A mathematical theory of communication.&rdquo; ACM SIGMOBILE mobile computing and communications review 5.1 (2001): 3-55.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2">
+<p><a href="https://en.wikipedia.org/wiki/Entropy">Wikipedia-Entropy</a>&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3">
+<p>Reif, Frederick, and Stuart A. Rice. &ldquo;Fundamentals of statistical and thermal physics.&rdquo; Physics Today 20.12 (1967): 85-87.&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
 </div>
